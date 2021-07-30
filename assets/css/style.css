@@ -10,7 +10,7 @@
 
 /*Assigning features to headings*/
 
-h1, h2{
+h1, h2, h3{
     font-family: "Indie Flower", sans-serif;
 }
 
@@ -20,6 +20,10 @@ h1{
 
 h2{
     font-size: 35px;
+}
+
+h3{
+    font-size: 25px;
 }
 
 /*Styles for the header*/
@@ -92,6 +96,7 @@ header{
     font-size: 70px;
 }
 
+/*Style for color choices*/
 #color_box1{
     background-color: #4284f5;
 }

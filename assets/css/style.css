@@ -91,3 +91,19 @@ header{
 .choice_box i {
     font-size: 70px;
 }
+
+#color_box1{
+    background-color: #4284f5;
+}
+
+#color_box2{
+    background-color: #f54242;
+}
+
+#color_box3{
+    background-color: #42f569;
+}
+
+#color_box4{
+    background-color: #e9f542;
+}

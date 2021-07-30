@@ -68,8 +68,8 @@ header{
 }
 
 .choice_container{
-    background-color: cyan;
     width: 50%;
+    margin-top: 2.5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,8 +79,7 @@ header{
 .choices{
     width: 50%;
     height: 100px;
-    margin-top: 2.5%;
-    background-color: coral;
+    margin-top: 4%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -89,7 +88,6 @@ header{
 .choice_box{
     width: 70px;
     height: 70px;
-    background-color: cornflowerblue;
 }
 
 .choice_box i {
@@ -111,4 +109,17 @@ header{
 
 #color_box4{
     background-color: #e9f542;
+}
+
+.level_box{
+    line-height: 50px;
+    width: 100px;
+    height: 50px;
+    padding: auto;
+}
+
+.choices span:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    box-sizing: border-box;
 }

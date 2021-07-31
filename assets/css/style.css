@@ -123,6 +123,8 @@ header{
     display: inline;
 }
 
+
+/*Styles for the underline of the choices using hr*/
 .color_line{
     background-color: black;
     height: 4px;
@@ -141,4 +143,21 @@ header{
     background-color: black;
     height: 4px;
     /*display: none;*/ 
+}
+
+/*Style for start button*/
+#str_res_btn{
+    margin-top: 50px;
+    width: 10%;
+    padding-top: 5px;
+    border: 4px solid black;
+}
+
+#str_res_btn:hover{
+    cursor: pointer;
+}
+
+h2 i{
+    font-size: 25px;
+    padding-top: 5px;
 }

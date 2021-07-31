@@ -120,6 +120,25 @@ header{
 
 .choices span:hover{
     cursor: pointer;
-    border: 1px solid black;
-    box-sizing: border-box;
+    display: inline;
+}
+
+.color_line{
+    background-color: black;
+    height: 4px;
+    margin-top: 85px;
+    /*display: none;*/
+}
+
+.icon_line{
+    background-color: black;
+    height: 4px;
+    margin-top: 12px;
+    /*display: none;*/
+}
+
+.level_line{
+    background-color: black;
+    height: 4px;
+    /*display: none;*/ 
 }

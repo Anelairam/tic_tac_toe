@@ -59,7 +59,7 @@ header{
 
 /*Style for choices' main section*/
 #main_choices_container{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -160,4 +160,37 @@ header{
 h2 i{
     font-size: 25px;
     padding-top: 5px;
+}
+
+/*Styles for the main game*/
+#main_game_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    margin: 100px auto 0 auto;
+    background-color: #f54242;
+    height: 500px;
+}
+
+#score_area{
+    background-color: bisque;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#game_grid{
+    width: 50%; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  
+}
+
+.player_box{
+    width: 30%;
+    height: 50px;
+    background-color: blue;
 }

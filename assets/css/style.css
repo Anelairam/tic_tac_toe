@@ -193,4 +193,51 @@ h2 i{
     width: 30%;
     height: 50px;
     background-color: blue;
+    box-sizing: border-box;
 }
+
+#box0{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#box1{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+
+#box2{
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+
+#box3{
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#box4{
+    border: 2px solid black;
+}
+
+#box5{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+#box6{
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+#box7{
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+#box8{
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+}
+

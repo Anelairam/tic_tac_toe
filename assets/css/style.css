@@ -146,14 +146,14 @@ header{
 }
 
 /*Style for start button*/
-#str_res_btn{
+#str_btn{
     margin-top: 50px;
     width: 10%;
     padding-top: 5px;
     border: 4px solid black;
 }
 
-#str_res_btn:hover{
+#str_btn:hover{
     cursor: pointer;
 }
 
@@ -170,13 +170,14 @@ h2 i{
     text-align: center;
     width: 60%;
     margin: 100px auto 0 auto;
-    background-color: #f54242;
+    background-color: #4284f5;
     height: 1020px;
 }
 
 #score_area{
     background-color: bisque;
     width: 50%;
+    height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -242,3 +243,23 @@ h2 i{
     border-left: 2px solid black;
 }
 
+/*Styles for the restart and reset buttons*/
+#res_btns{
+    width: 40%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9f542;
+}
+
+#rst_btn{
+    border: 4px solid black;
+    padding: 5px;
+}
+
+#reset_btn{
+    border: 4px solid black;
+    padding: 5px;
+}

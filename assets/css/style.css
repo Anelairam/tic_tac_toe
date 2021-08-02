@@ -169,15 +169,14 @@ h2 i{
     align-items: center;
     text-align: center;
     width: 60%;
-    margin: 100px auto 0 auto;
-    background-color: #4284f5;
+    margin: 50px auto 0 auto;
     height: 1020px;
 }
 
 #score_area{
-    background-color: bisque;
+    /*background-color: bisque;*/
     width: 50%;
-    height: 150px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -194,8 +193,11 @@ h2 i{
 .player_box{
     width: 30%;
     height: 200px;
-    background-color: blue;
     box-sizing: border-box;
+}
+
+.player_box:hover{
+    cursor: pointer;
 }
 
 #box0{
@@ -247,19 +249,29 @@ h2 i{
 #res_btns{
     width: 40%;
     height: 150px;
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #e9f542;
 }
 
 #rst_btn{
     border: 4px solid black;
-    padding: 5px;
+    padding: 8px;
+    background-color: #EEEEEE;
 }
 
 #reset_btn{
     border: 4px solid black;
-    padding: 5px;
+    padding: 8px;
+    background-color: #EEEEEE;
+}
+
+#rst_btn:hover{
+    cursor: pointer;
+}
+
+#reset_btn{
+    cursor: pointer;
 }

@@ -59,7 +59,7 @@ header{
 
 /*Style for choices' main section*/
 #main_choices_container{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -85,13 +85,18 @@ header{
     justify-content: space-between;
 }
 
-.choice_box{
+.icon_box{
     width: 70px;
     height: 70px;
 }
 
-.choice_box i {
+.icon_box i {
     font-size: 70px;
+}
+
+.color_box{
+    width: 70px;
+    height: 70px;
 }
 
 /*Style for color choices*/
@@ -164,7 +169,7 @@ h2 i{
 
 /*Styles for the main game*/
 #main_game_container{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;

@@ -1,104 +1,119 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tic Tac Toe
 
-Welcome Marialena Livathinopoulou,
+Tic Tac Toe is an online game with mutliple customisation options on the player's icon, color and level's difficutly.
+![Responsice Mockup](https://github.com/Anelairam/picturegreece/blob/master/responsive.jpg)
+![Responsice Mockup](https://github.com/Anelairam/picturegreece/blob/master/responsive2.jpg)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
 
-## Gitpod Reminders
+### Existing Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- __Heading__
 
-`python3 -m http.server`
+  - Displayed on all of the pages, the heading bar has responsive design and includes game features for the sound and the music of the game. These features are available at the gamers customisation page and the actual game page.
+  - The sound bar allows the player to adjust if they want to keep the music playing while they are in game or they want to lower down the volume of the sound effects. The player has the ability to increase, decrease and mute the sound and the music. 
 
-A blue button should appear to click: _Make Public_,
+![Nav Bar](https://github.com/Anelairam/picturegreece/blob/master/navbar.jpg)
 
-Another blue button should appear to click: _Open Browser_.
+- __The landing page image__
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+  - The landing page includes the heading area with the sound options for the user 
+  -  a photograph with a fixed navigation bar which will allow the user to navigate through the page with a thin black line so it can be seperated from the rest of the content.  
+  - This section introduces the user to Picture Greece with a beautiful scenerey image and scrolling effect to.
 
-A blue button should appear to click: _Make Public_,
+![Landing Page](https://github.com/Anelairam/picturegreece/blob/master/header.jpg)
+![Landing Page](https://github.com/Anelairam/picturegreece/blob/master/iphonesE.jpg)
 
-Another blue button should appear to click: _Open Browser_.
+- __About Us section__
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  - The about us section will allow the user to learn more about the reason that the site was created at first place, trying to share the creators experience and feelings.
+  - The user will identify himself/herself to the creators and want to share the same experience with other people, share knowledge and socialise. 
 
-To log into the Heroku toolbelt CLI:
+![About us](https://github.com/Anelairam/picturegreece/blob/master/aboutus.jpg)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- __Tour section__
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  - This section will allow the user to see where the tours are take place, 
+  - This section will be updated everytime of the season and depending on the weather. 
 
-------
+![Tours](https://github.com/Anelairam/picturegreece/blob/master/tours.jpg)
 
-## Release History
+- __Contact Us section__ 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  - The contact us section provides to the user easy way to ask question and get response from the agency for extra information regarding the tours and registration of interest.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Contact us](https://github.com/Anelairam/picturegreece/blob/master/contact.jpg)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- __Footer and social media__
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  - The footer section includes links to the social media sites. The links will open to a new tab to allow easy navigation for the user. 
+  - The footer is valuable to the user as it encourages them to keep connected via social media and have the latest news all the time.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Footer and social media](https://github.com/Anelairam/picturegreece/blob/master/social.jpg)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- __The Tour Page__
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  - This page is a dedicated page providing information regarding the tours and it's theme. Where do they take place, decribing a lightly the scenery of it's tour themne and destination were it's destination has its personal page with cities, islands and dedicated information.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- __Urban__
+![Urban](https://github.com/Anelairam/picturegreece/blob/master/urban.jpg)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+__Landscape__
+![Landscape](https://github.com/Anelairam/picturegreece/blob/master/landscape.jpg)
+![Landscape](https://github.com/Anelairam/picturegreece/blob/master/iphonesEland.jpg)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+__Island__
+![ISland](https://github.com/Anelairam/picturegreece/blob/master/island.jpg)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Features Left to Implement
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- Feautures that it is planned to be implemented in the near future is an active google map with the imaginary information of the agency.
+- Another feature is a Sign up form with more detailes and a terms of aggreement for the registration to the tours.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Testing 
 
-------
+- A solid round of testings happened due to the entire deployment of the project mostly used tool for the testing was the browsers development tools.
+- In this stage it was noticed that the project did not look exactly the same when it was visited from external devices like mobile phones and tablets.
+- An intresting bug that it is not yet addressed it's a white space appearing on the Ipad Pro preview between the main image and header section.
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+### Validator Testing 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- HTML
+  - No errors were returned when passing through the official for all the pages [W3C validator](https://github.com/Anelairam/picturegreece/blob/master/index-validation.jpg)
+  - [W3C validator](https://github.com/Anelairam/picturegreece/blob/master/tour-page-validator.jpg)
+  - [W3C validator](https://github.com/Anelairam/picturegreece/blob/master/tour-page-validator.jpg)
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://github.com/Anelairam/picturegreece/blob/master/css-validator.jpg)
 
-**How will this affect me?**
+### Unfixed Bugs
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+-A bug that it is not yet addressed it's a white space appearing on the Ipad Pro preview between the main image and header section.
+ 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Deployment
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- The site was deployed to GitHub pages and gidpod. 
 
-**So….?**
+The live link can be found here - https://anelairam.github.io/picturegreece/
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+## Credits 
+- I would like to access lots of credits to the following:
+  -Slack community, regarding their help for the flexbox and the support..
+  -My mentor guidance and assistance throught the project with the planned sessions, all the feedback and usefull links
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Content 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- The text for the urban,landscape and island pager was taken from [Visit Greece](www.visitgreece.gr)
+- Instructions on how to implement flexbox and properties [w#scholls](https://www.w3schools.com/)
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The flexbox dividing code at the contact section on the big screens was pased on [Stackoverflow](https://stackoverflow.com/)
 
-**Anything more?**
+### Media
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- The photos used on the home and sign up page are from google images and [Pexels](www.pexels.com)
 
----
+Congratulations on completing your Readme, you have made another big stride in the direction of being a developer! 
 
-Happy coding!
+Thank you!

@@ -13,15 +13,23 @@ document.addEventListener("DOMContentLoaded", function(){
 
     playerChoose();
     startGame();
+   // playerCharacter();
     resetGame();
 })
 
 
+function playerCharacter(){
+    let playerOneHolder = document.getElementById("player_one_holder");
+
+    console.log(playerOneChoices)
+    playerOneHolder.classList.add($playerOneChoices.symbol);
+}
+
+//Saves the player's choices
 function playerChoose(){
     let icons = document.getElementsByTagName("i");
     let colorBoxes = document.getElementsByClassName("color_box");
     let levels = document.getElementsByClassName("level_box");
-
 
     //player chooses icon
     for (let icon of icons){
@@ -30,14 +38,12 @@ function playerChoose(){
         })
     }
 
-
     //player chooses color
     for (let colorBox of colorBoxes){
         colorBox.addEventListener("click", function(){
            playerOneChoices.color = this.className;      
         })
     }
-
 
     //player chooses difficulty
     for (let level of levels){
@@ -47,11 +53,7 @@ function playerChoose(){
     }    
 }
 
-
-
-
-
-
+//Starts the game
 function startGame(){
     startButton.addEventListener("click", function(){
         //Check if the player has made all his choices
@@ -69,6 +71,7 @@ function startGame(){
     })
 }
 
+//Resets the game
 function resetGame(){
     resetButton.addEventListener("click", function(){
         //make an check if the player has made all his choices

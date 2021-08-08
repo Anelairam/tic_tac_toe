@@ -286,3 +286,24 @@ h2 i{
 #reset_btn{
     cursor: pointer;
 }
+
+/*Responsive - media queries*/
+
+@media screen and (max-width: 1440px){
+
+    .choices{
+        width: 80%;
+        height: 75px;
+    }
+    .icon_box{
+        margin-right: 25px;
+    }
+
+    .icon_box i{
+        font-size: 60px;
+    }
+
+    #str_btn{
+        width: 20%;
+    }
+}

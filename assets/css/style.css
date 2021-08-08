@@ -294,6 +294,11 @@ h2 i{
     .choices{
         width: 80%;
         height: 75px;
+        margin-top: 6%;
+    }
+
+    .choice_container h2{
+        margin-top: 6%;
     }
     .icon_box{
         margin-right: 25px;
@@ -305,5 +310,9 @@ h2 i{
 
     #str_btn{
         width: 20%;
+    }
+
+    #game_grid{
+        width: 80%;
     }
 }

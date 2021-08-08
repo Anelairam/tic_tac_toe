@@ -94,10 +94,16 @@ header{
     font-size: 70px;
 }
 
+i span{
+    display: none;
+}
+
 .color_box{
     width: 70px;
     height: 70px;
 }
+
+
 
 /*Style for color choices*/
 #color_box1{

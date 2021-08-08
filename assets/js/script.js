@@ -2,18 +2,44 @@ var startButton = document.getElementById("str_btn");
 var resetButton = document.getElementById("reset_btn");
 var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
-var playerOneChoices = new Object;
+var playerOneChoices = 
+    { symbol: "none",
+      color: "none",
+      difficulty: "none"}
 
 
 
 document.addEventListener("DOMContentLoaded", function(){
 
+    playerChoose();
     startGame();
     resetGame();
 })
 
 
+function playerChoose(){
+    let icons = document.getElementsByTagName("i");
+    let colorBoxes = document.getElementsByClassName("color_box");
+    let levels = document.getElementsByClassName("level_box");
 
+    for (let icon of icons){
+        icon.addEventListener("click", function(){
+           playerOneChoices.symbol = this.className;        
+        })
+    }
+
+    for (let colorBox of colorBoxes){
+        colorBox.addEventListener("click", function(){
+           playerOneChoices.color = this.className;      
+        })
+    }
+
+    for (let level of levels){
+        level.addEventListener("click", function(){
+           playerOneChoices.difficulty = this.className;      
+        })
+    }    
+}
 
 
 

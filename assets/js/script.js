@@ -22,18 +22,24 @@ function playerChoose(){
     let colorBoxes = document.getElementsByClassName("color_box");
     let levels = document.getElementsByClassName("level_box");
 
+
+    //player chooses icon
     for (let icon of icons){
         icon.addEventListener("click", function(){
            playerOneChoices.symbol = this.className;        
         })
     }
 
+
+    //player chooses color
     for (let colorBox of colorBoxes){
         colorBox.addEventListener("click", function(){
            playerOneChoices.color = this.className;      
         })
     }
 
+
+    //player chooses difficulty
     for (let level of levels){
         level.addEventListener("click", function(){
            playerOneChoices.difficulty = this.className;      
@@ -48,12 +54,18 @@ function playerChoose(){
 
 function startGame(){
     startButton.addEventListener("click", function(){
-        //make an check if the player has made all his choices
-
-        //Change the display propterty on choices and game contianer
-        mainChoices.style.display = "none";
-        mainGame.style.display = "flex";
-
+        //Check if the player has made all his choices
+        for (let i = 0; i < 3; i++){
+            if (playerOneChoices.symbol != "none" && playerOneChoices.color != "none" && playerOneChoices.difficulty != "none"){
+                //Change the display propterty on choices and game contianer
+                mainChoices.style.display = "none";
+                mainGame.style.display = "flex";
+            }
+            else{
+                alert("There are missing characteristics from your symbol");
+                break;
+            }
+        }
     })
 }
 

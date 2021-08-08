@@ -1,5 +1,4 @@
-alert("hello people");
-
+var startButton = document.getElementById("str_btn");
 var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
 var playerOneChoices = new Object;
@@ -8,11 +7,7 @@ var playerOneChoices = new Object;
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    let start = document.getElementById("str_btn");
-    start.addEventListener("click",function(){
-        //Add the startGame function
-        console.log("hello");
-    })
+    startGame();
 })
 
 
@@ -24,8 +19,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 function startGame(){
-    let startButton = document.getElementById("str_btn");
-
     startButton.addEventListener("click", function(){
         //make an check if the player has made all his choices
 

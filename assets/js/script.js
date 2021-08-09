@@ -3,6 +3,7 @@ var resetButton = document.getElementById("reset_btn");
 var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
 var playerOneHolder = document.getElementById("player_one_holder");
+var gridBox = document.getElementsByClassName("player_box");
 var triger = false;
 var playerOneChoices = 
     { symbol: "none",
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     playerChoose();
     startGame();
-    
+    gamePlay();
     resetGame();
 })
 
@@ -79,6 +80,10 @@ function playerChoose(){
            playerOneChoices.difficulty = this.className;      
         })
     }    
+}
+
+function gamePlay(){
+    console.log(gridBox[0].id);
 }
 
 function classEraser(){

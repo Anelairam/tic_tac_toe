@@ -2,6 +2,8 @@ var startButton = document.getElementById("str_btn");
 var resetButton = document.getElementById("reset_btn");
 var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
+var playerOneHolder = document.getElementById("player_one_holder");
+var triger = false;
 var playerOneChoices = 
     { symbol: "none",
       color: "none",
@@ -13,25 +15,30 @@ document.addEventListener("DOMContentLoaded", function(){
 
     playerChoose();
     startGame();
-   // playerCharacterHolder();
+    if(triger == true){
+        console.log(playerOneChoices.symbol);
+        //playerCharacterHolder();
+    } 
     resetGame();
 })
 
 
 function playerCharacterHolder(){
-    let playerOneHolder = document.getElementById("player_one_holder");
 
     if (playerOneChoices.symbol == "fab fa-fly"){
-        playerOneHolder.classList.add("fab fa-fly");
+        playerOneHolder.classList.add("fab");
+        playerOneHolder.classList.add("fa-fly");
     }
     else if (playerOneChoices.symbol == "fas fa-paw"){
-        playerOneHolder.classList.add("fab fa-fly");
+        playerOneHolder.classList.add("fas");
+        playerOneHolder.classList.add("fa-paw");
     }
-    else if (playerOneChoices.symbol == "fas fa-cloud"){
-        playerOneHolder.classList.add("fas fa-cloud");
+    else if (playerOneChoices.symbol == "fas"){
+        playerOneHolder.classList.add("fa-cloud");
     }
     else{
-        playerOneHolder.classList.add("fab fa-envira");
+        playerOneHolder.classList.add("fab");
+        playerOneHolder.classList.add("fa-envira");
     }
 }
 
@@ -72,6 +79,7 @@ function startGame(){
                 //Change the display propterty on choices and game contianer
                 mainChoices.style.display = "none";
                 mainGame.style.display = "flex";
+                triger = true;
             }
             else{
                 alert("There are missing characteristics from your symbol");

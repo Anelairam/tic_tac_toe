@@ -13,16 +13,26 @@ document.addEventListener("DOMContentLoaded", function(){
 
     playerChoose();
     startGame();
-   // playerCharacter();
+   // playerCharacterHolder();
     resetGame();
 })
 
 
-function playerCharacter(){
+function playerCharacterHolder(){
     let playerOneHolder = document.getElementById("player_one_holder");
 
-    console.log(playerOneChoices)
-    playerOneHolder.classList.add($playerOneChoices.symbol);
+    if (playerOneChoices.symbol == "fab fa-fly"){
+        playerOneHolder.classList.add("fab fa-fly");
+    }
+    else if (playerOneChoices.symbol == "fas fa-paw"){
+        playerOneHolder.classList.add("fab fa-fly");
+    }
+    else if (playerOneChoices.symbol == "fas fa-cloud"){
+        playerOneHolder.classList.add("fas fa-cloud");
+    }
+    else{
+        playerOneHolder.classList.add("fab fa-envira");
+    }
 }
 
 //Saves the player's choices

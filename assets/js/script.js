@@ -15,10 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     playerChoose();
     startGame();
-    if(triger == true){
-        console.log(playerOneChoices.symbol);
-        //playerCharacterHolder();
-    } 
+    
     resetGame();
 })
 
@@ -33,12 +30,27 @@ function playerCharacterHolder(){
         playerOneHolder.classList.add("fas");
         playerOneHolder.classList.add("fa-paw");
     }
-    else if (playerOneChoices.symbol == "fas"){
+    else if (playerOneChoices.symbol == "fas fa-cloud"){
+        playerOneHolder.classList.add("fas");
         playerOneHolder.classList.add("fa-cloud");
     }
     else{
         playerOneHolder.classList.add("fab");
         playerOneHolder.classList.add("fa-envira");
+    }
+
+    
+    if (playerOneChoices.color == "color_box blue"){
+        playerOneHolder.classList.add("blue_color");
+    }
+    else if (playerOneChoices.color == "color_box red"){
+        playerOneHolder.classList.add("red_color");
+    }
+    else if (playerOneChoices.color == "color_box green"){
+        playerOneHolder.classList.add("green_color");
+    }
+    else{
+        playerOneHolder.classList.add("yellow_color");
     }
 }
 
@@ -74,18 +86,17 @@ function playerChoose(){
 function startGame(){
     startButton.addEventListener("click", function(){
         //Check if the player has made all his choices
-        for (let i = 0; i < 3; i++){
+        
             if (playerOneChoices.symbol != "none" && playerOneChoices.color != "none" && playerOneChoices.difficulty != "none"){
                 //Change the display propterty on choices and game contianer
+                playerCharacterHolder();
                 mainChoices.style.display = "none";
                 mainGame.style.display = "flex";
                 triger = true;
             }
             else{
                 alert("There are missing characteristics from your symbol");
-                break;
-            }
-        }
+            }        
     })
 }
 

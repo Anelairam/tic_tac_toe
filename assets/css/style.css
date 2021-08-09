@@ -110,16 +110,36 @@ i span{
     background-color: #4284f5;
 }
 
+.blue_color{
+    color: #4284f5;
+    font-size: 35px;
+}
+
 #color_box2{
     background-color: #f54242;
+}
+
+.red_color{
+    color: #f54242;
+    font-size: 35px;
 }
 
 #color_box3{
     background-color: #42f569;
 }
 
+.green_color{
+    color: #42f569;
+    font-size: 35px;
+}
+
 #color_box4{
     background-color: #e9f542;
+}
+
+.yellow_color{
+    color: #e9f542;
+    font-size: 35px;
 }
 
 .level_box{

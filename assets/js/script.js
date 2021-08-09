@@ -38,7 +38,6 @@ function playerCharacterHolder(){
         playerOneHolder.classList.add("fab");
         playerOneHolder.classList.add("fa-envira");
     }
-
     
     if (playerOneChoices.color == "color_box blue"){
         playerOneHolder.classList.add("blue_color");
@@ -82,6 +81,10 @@ function playerChoose(){
     }    
 }
 
+function classEraser(){
+    playerOneHolder.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
+}
+
 //Starts the game
 function startGame(){
     startButton.addEventListener("click", function(){
@@ -104,7 +107,7 @@ function startGame(){
 function resetGame(){
     resetButton.addEventListener("click", function(){
         //make an check if the player has made all his choices
-
+        classEraser();
         //Change the display propterty on choices and game contianer
         playerOneChoices.symbol ="none";
         playerOneChoices.color = "none";

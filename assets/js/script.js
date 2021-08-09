@@ -77,6 +77,9 @@ function resetGame(){
         //make an check if the player has made all his choices
 
         //Change the display propterty on choices and game contianer
+        playerOneChoices.symbol ="none";
+        playerOneChoices.color = "none";
+        playerOneChoices.difficulty = "none";
         mainGame.style.display = "none";
         mainChoices.style.display = "flex";
         

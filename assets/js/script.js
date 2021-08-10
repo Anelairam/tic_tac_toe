@@ -3,7 +3,7 @@ var resetButton = document.getElementById("reset_btn");
 var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
 var playerOneHolder = document.getElementById("player_one_holder");
-var gridBox = document.getElementsByClassName("player_box");
+var gridBoxes = document.getElementsByClassName("player_box");
 var triger = false;
 var playerOneChoices = 
     { symbol: "none",
@@ -16,9 +16,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
     playerChoose();
     startGame();
-    gamePlay();
+
+    for (let gridBox of gridBoxes){
+        gridBox.addEventListener("click", function(){
+            console.log(gridBox);
+        })
+    }    
     resetGame();
 })
+
+
 
 
 function playerCharacterHolder(){
@@ -82,6 +89,7 @@ function playerChoose(){
     }    
 }
 
+
 function gamePlay(){
     console.log(gridBox[0].id);
 }
@@ -98,6 +106,7 @@ function startGame(){
             if (playerOneChoices.symbol != "none" && playerOneChoices.color != "none" && playerOneChoices.difficulty != "none"){
                 //Change the display propterty on choices and game contianer
                 playerCharacterHolder();
+                //Make function for the cpu holder
                 mainChoices.style.display = "none";
                 mainGame.style.display = "flex";
                 triger = true;

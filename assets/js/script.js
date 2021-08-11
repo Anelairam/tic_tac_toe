@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function(){
             count ++;
 
             if (count <5){
-                cpuMove();
+                setTimeout(cpuMove, 1500);
             }
             gameResult();           
         }) 

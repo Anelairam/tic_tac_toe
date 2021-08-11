@@ -59,15 +59,31 @@ document.addEventListener("DOMContentLoaded", function(){
                 gridBox.firstElementChild.classList.add("yellow_color");
             }
             count ++;
-            
+
             if (count <5){
                 cpuMove();
             }
-                       
+            gameResult();           
         }) 
     }
     resetGame();
 })
+
+function gameResult(){
+    //win combinations
+    /*  0-1-2   0-3-6   0-4-8
+        3-4-5   1-4-7   2-4-6
+        6-7-8   2-5-8
+    */
+    if (gridBoxes[0].firstElementChild.className == gridBoxes[1].firstElementChild.className){
+        if(gridBoxes[1].firstElementChild.className == gridBoxes[2].firstElementChild.className){
+            alert("You win");
+        }
+        else{
+            alert("You loose");
+        }
+    }
+}
 
 function cpuMove(){
     let move = Math.floor(Math.random() *9);
@@ -328,7 +344,8 @@ function startGame(){
 //Resets the game
 function resetGame(){
     resetButton.addEventListener("click", function(){
-        //make an check if the player has made all his choices
+        location.reload();
+       /* //make an check if the player has made all his choices
         classEraser();
         //Change the display propterty on choices and game contianer
         playerOneChoices.symbol ="none";
@@ -336,7 +353,7 @@ function resetGame(){
         playerOneChoices.difficulty = "none";
         mainGame.style.display = "none";
         mainChoices.style.display = "flex";
-        
+        */
 
     })
 }

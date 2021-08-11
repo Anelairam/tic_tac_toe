@@ -28,6 +28,13 @@ var myAudio = new Audio();
 var musicBtn = document.getElementById("music_btn");
 var musicOn = false;
 
+var mySound = new Audio();
+    mySound.src = "../assets/audio/p1.mp3";
+    mySound.volume = 0.3;
+var yourSound = new Audio();
+    yourSound.src = "../assets/audio/p2.mp3";
+    yourSound.volume = 0.3;
+
 
 
 
@@ -82,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 gridBox.firstElementChild.classList.add("yellow_color");
             }
             gridBox.firstElementChild.nextElementSibling.innerHTML = "x";
-            
+            mySound.play();
             count ++;
 
                 if (count <5){
@@ -201,7 +208,7 @@ function cpuMove(){
         else{
             gridBoxes[move].firstElementChild.classList.add("yellow_color");
         }
-
+        yourSound.play();
         hiddenChars[move].innerHTML = "o";
     }
     else{

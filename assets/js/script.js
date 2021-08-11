@@ -15,8 +15,7 @@ var playerOneChoices =
 
 var cpuChoices = 
     { symbol: "none",
-      color: "none",
-      difficulty: "none"}
+      color: "none"}
 
 
 
@@ -58,40 +57,146 @@ document.addEventListener("DOMContentLoaded", function(){
             else{
                 gridBox.firstElementChild.classList.add("yellow_color");
             }
-
+            cpuMove();           
         }) 
     }
     resetGame();
 })
 
+function cpuMove(){
+    let move = Math.floor(Math.random() *9);
+
+    if (gridBoxes[move].firstElementChild.className == "grid_icon"){
+        if (cpuChoices.symbol == "fab fa-fly"){
+            gridBoxes[move].firstElementChild.classList.add("fab");
+            gridBoxes[move].firstElementChild.classList.add("fa-fly");
+        }
+        else if (cpuChoices.symbol == "fas fa-paw"){
+            gridBoxes[move].firstElementChild.classList.add("fas");
+            gridBoxes[move].firstElementChild.classList.add("fa-paw");
+        }
+        else if (cpuChoices.symbol == "fas fa-cloud"){
+            gridBoxes[move].firstElementChild.classList.add("fas");
+            gridBoxes[move].firstElementChild.classList.add("fa-cloud");
+        }
+        else{
+            gridBoxes[move].firstElementChild.classList.add("fab");
+            gridBoxes[move].firstElementChild.classList.add("fa-envira");
+        }
+        
+        if (cpuChoices.color == "color_box blue"){
+            gridBoxes[move].firstElementChild.classList.add("blue_color");
+        }
+        else if (cpuChoices.color == "color_box red"){
+            gridBoxes[move].firstElementChild.classList.add("red_color");
+        }
+        else if (cpuChoices.color == "color_box green"){
+            gridBoxes[move].firstElementChild.classList.add("green_color");
+        }
+        else{
+            gridBoxes[move].firstElementChild.classList.add("yellow_color");
+        }
+    }
+    else{
+        cpuMove();
+    }
+}
+
 function cpuCharChoose(){
     let num = Math.floor(Math.random() *4);
     if (num == 0){
-        if ((playerOneChoices.symbol !== "fab fa-fly") && (playerOneChoices.color !== "color_box blue")){
+        if (playerOneChoices.symbol !== "fab fa-fly"){
             cpuHolder.classList.add("fab");
             cpuHolder.classList.add("fa-fly");
-            cpuHolder.classList.add("blue_color");           
+            cpuChoices.symbol = "fab fa-fly";
+
+            if (playerOneChoices.color !== "color_box blue"){
+                cpuHolder.classList.add("blue_color"); 
+                cpuChoices.color = "blue_color";
+            }   
+            else if (playerOneChoices.color !== "color_box red"){
+                cpuHolder.classList.add("red_color"); 
+                cpuChoices.color = "red_color";
+            } 
+            else if (playerOneChoices.color !== "color_box green"){
+                cpuHolder.classList.add("green_color"); 
+                cpuChoices.color = "green_color";
+            } 
+            else (playerOneChoices.color !== "color_box yellow")
+                cpuHolder.classList.add("yellow_color"); 
+                cpuChoices.color = "yellow_color";
+                 
         }
     }
     else if (num == 1){
-        if ((playerOneChoices.symbol !== "fas fa-paw") && (playerOneChoices.color !== "color_box red")){
+        if (playerOneChoices.symbol !== "fas fa-paw"){
             cpuHolder.classList.add("fas");
             cpuHolder.classList.add("fa-paw");
-            cpuHolder.classList.add("red_color");
+            cpuChoices.symbol = "fas fa-paw";
+            
+            if (playerOneChoices.color !== "color_box blue"){
+                cpuHolder.classList.add("blue_color");
+                cpuChoices.color = "blue_color";
+            }   
+            else if (playerOneChoices.color !== "color_box red"){
+                cpuHolder.classList.add("red_color");
+                cpuChoices.color = "red_color"; 
+            } 
+            else if (playerOneChoices.color !== "color_box green"){
+                cpuHolder.classList.add("green_color");
+                cpuChoices.color = "green_color"; 
+            } 
+            else (playerOneChoices.color !== "color_box yellow")
+                cpuHolder.classList.add("yellow_color");
+                cpuChoices.color = "yellow_color";
+                 
         }
     }
     else if (num == 2){
-        if ((playerOneChoices.symbol !== "fas fa-cloud") && (playerOneChoices.color !== "color_box green")){
+        if (playerOneChoices.symbol !== "fas fa-cloud"){
             cpuHolder.classList.add("fas");
             cpuHolder.classList.add("fa-cloud");
-            cpuHolder.classList.add("green_color");
+            cpuChoices.symbol = "fas fa-cloud";
+            
+            if (playerOneChoices.color !== "color_box blue"){
+                cpuHolder.classList.add("blue_color"); 
+                cpuChoices.color = "blue_color";
+            }   
+            else if (playerOneChoices.color !== "color_box red"){
+                cpuHolder.classList.add("red_color"); 
+                cpuChoices.color = "red_color";
+            } 
+            else if (playerOneChoices.color !== "color_box green"){
+                cpuHolder.classList.add("green_color"); 
+                cpuChoices.color = "green_color";
+            } 
+            else (playerOneChoices.color !== "color_box yellow")
+                cpuHolder.classList.add("yellow_color"); 
+                cpuChoices.color = "yellow_color";
+                 
         }
     }
     else {
-        if ((playerOneChoices.symbol !== "fab fa-envira") && (playerOneChoices.color !== "color_box yellow")){
+        if (playerOneChoices.symbol !== "fab fa-envira"){
             cpuHolder.classList.add("fab");
             cpuHolder.classList.add("fa-envira");   
-            cpuHolder.classList.add("yellow_color");         
+            cpuChoices.symbol = "fab fa-envira";
+            
+            if (playerOneChoices.color !== "color_box blue"){
+                cpuHolder.classList.add("blue_color"); 
+                cpuChoices.color = "blue_color";
+            }   
+            else if (playerOneChoices.color !== "color_box red"){
+                cpuHolder.classList.add("red_color"); 
+                cpuChoices.color = "red_color";
+            } 
+            else if (playerOneChoices.color !== "color_box green"){
+                cpuHolder.classList.add("green_color"); 
+                cpuChoices.color = "green_color";
+            } 
+            else (playerOneChoices.color !== "color_box yellow")
+                cpuHolder.classList.add("yellow_color"); 
+                cpuChoices.color = "yellow_color";    
         }
     } 
 
@@ -187,13 +292,9 @@ function playerChoose(){
     }    
 }
 
-
-function gamePlay(){
-    console.log(gridBox[0].id);
-}
-
 function classEraser(){
     playerOneHolder.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
+    cpuHolder.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
     for (let gridBox of gridBoxes){
         gridBox.firstElementChild.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
     }

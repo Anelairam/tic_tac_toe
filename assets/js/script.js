@@ -2,11 +2,18 @@ var startButton = document.getElementById("str_btn");
 var resetButton = document.getElementById("reset_btn");
 var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
+var icons = document.getElementsByTagName("i");
+var colorBoxes = document.getElementsByClassName("color_box");
+var levels = document.getElementsByClassName("level_box");
 var playerOneHolder = document.getElementById("player_one_holder");
+var cpuHolder = document.getElementById("cpu_holder");
 var gridBoxes = document.getElementsByClassName("player_box");
-//var gridIcons = document.getElementsByClassName("grid_icon");
-var triger = false;
 var playerOneChoices = 
+    { symbol: "none",
+      color: "none",
+      difficulty: "none"}
+
+var cpuChoices = 
     { symbol: "none",
       color: "none",
       difficulty: "none"}
@@ -57,7 +64,38 @@ document.addEventListener("DOMContentLoaded", function(){
     resetGame();
 })
 
+function cpuCharChoose(){
+    let num = Math.floor(Math.random() *4);
+    if (num == 0){
+        if ((playerOneChoices.symbol !== "fab fa-fly") && (playerOneChoices.color !== "color_box blue")){
+            cpuHolder.classList.add("fab");
+            cpuHolder.classList.add("fa-fly");
+            cpuHolder.classList.add("blue_color");           
+        }
+    }
+    else if (num == 1){
+        if ((playerOneChoices.symbol !== "fas fa-paw") && (playerOneChoices.color !== "color_box red")){
+            cpuHolder.classList.add("fas");
+            cpuHolder.classList.add("fa-paw");
+            cpuHolder.classList.add("red_color");
+        }
+    }
+    else if (num == 2){
+        if ((playerOneChoices.symbol !== "fas fa-cloud") && (playerOneChoices.color !== "color_box green")){
+            cpuHolder.classList.add("fas");
+            cpuHolder.classList.add("fa-cloud");
+            cpuHolder.classList.add("green_color");
+        }
+    }
+    else {
+        if ((playerOneChoices.symbol !== "fab fa-envira") && (playerOneChoices.color !== "color_box yellow")){
+            cpuHolder.classList.add("fab");
+            cpuHolder.classList.add("fa-envira");   
+            cpuHolder.classList.add("yellow_color");         
+        }
+    } 
 
+}
 
 /*function playerChoiceCharacter(x){
     if (playerOneChoices.symbol == "fab fa-fly"){
@@ -126,9 +164,6 @@ function playerCharacterHolder(){
 
 //Saves the player's choices
 function playerChoose(){
-    let icons = document.getElementsByTagName("i");
-    let colorBoxes = document.getElementsByClassName("color_box");
-    let levels = document.getElementsByClassName("level_box");
 
     //player chooses icon
     for (let icon of icons){
@@ -172,10 +207,10 @@ function startGame(){
             if (playerOneChoices.symbol != "none" && playerOneChoices.color != "none" && playerOneChoices.difficulty != "none"){
                 //Change the display propterty on choices and game contianer
                 playerCharacterHolder();
+                cpuCharChoose();
                 //Make function for the cpu holder
                 mainChoices.style.display = "none";
                 mainGame.style.display = "flex";
-                triger = true;
             }
             else{
                 alert("There are missing characteristics from your symbol");

@@ -1,5 +1,5 @@
 var startButton = document.getElementById("str_btn");
-var resetButton = document.getElementById("reset_btn");
+var resetButton = document.getElementById("rst_btn");
 var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
 var icons = document.getElementsByTagName("i");

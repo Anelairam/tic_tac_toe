@@ -62,8 +62,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
             if (count <5){
                 setTimeout(cpuMove, 1500);
+                setTimeout(gameResult, 1600);
             }
-            gameResult();           
+                       
         }) 
     }
     resetGame();
@@ -71,13 +72,33 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function gameResult(){
     //win combinations
-    /*  0-1-2   0-3-6   0-4-8
-        3-4-5   1-4-7   2-4-6
-        6-7-8   2-5-8
-    */
-   if ((gridBoxes[0].firstElementChild.className == gridBoxes[1].firstElementChild.className) && (gridBoxes[1].firstElementChild.className == gridBoxes[2].firstElementChild.className)){
-       console.log("correct");
-   }
+    for (let i=0; i<gridBoxes.length; i+=3){
+        if(gridBoxes[i].firstElementChild.className !== "grid_icon"){
+            if ((gridBoxes[i].firstElementChild.className == gridBoxes[i+1].firstElementChild.className) && (gridBoxes[i+1].firstElementChild.className == gridBoxes[i+2].firstElementChild.className)){
+                console.log("correct");
+            }
+        }
+    }
+
+    for (let i=0; i<3; i++){
+        if(gridBoxes[i].firstElementChild.className !== "grid_icon"){
+            if ((gridBoxes[i].firstElementChild.className == gridBoxes[i+3].firstElementChild.className) && (gridBoxes[i+3].firstElementChild.className == gridBoxes[i+6].firstElementChild.className)){
+                console.log("correct");
+            }
+        }
+    }
+
+    if(gridBoxes[0].firstElementChild.className !== "grid_icon"){
+        if ((gridBoxes[0].firstElementChild.className == gridBoxes[4].firstElementChild.className) && (gridBoxes[4].firstElementChild.className == gridBoxes[8].firstElementChild.className)){
+            console.log("correct");
+        }
+    }
+
+    if(gridBoxes[2].firstElementChild.className !== "grid_icon"){
+        if ((gridBoxes[2].firstElementChild.className == gridBoxes[4].firstElementChild.className) && (gridBoxes[4].firstElementChild.className == gridBoxes[6].firstElementChild.className)){
+            console.log("correct");
+        }
+    }
 }
 
 function cpuMove(){
@@ -219,38 +240,6 @@ function cpuCharChoose(){
 
 }
 
-/*function playerChoiceCharacter(x){
-    if (playerOneChoices.symbol == "fab fa-fly"){
-        gridBox.firstElementChild.classList.add("fab");
-        gridBox.firstElementChild.classList.add("fa-fly");
-    }
-    else if (playerOneChoices.symbol == "fas fa-paw"){
-        gridBox.firstElementChild.classList.add("fas");
-        gridBox.firstElementChild.classList.add("fa-paw");
-    }
-    else if (playerOneChoices.symbol == "fas fa-cloud"){
-        gridBox.firstElementChild.classList.add("fas");
-        gridBox.firstElementChild.classList.add("fa-cloud");
-    }
-    else{
-        gridBox.firstElementChild.classList.add("fab");
-        gridBox.firstElementChild.classList.add("fa-envira");
-    }
-    
-    if (playerOneChoices.color == "color_box blue"){
-        gridBox.firstElementChild.classList.add("blue_color");
-    }
-    else if (playerOneChoices.color == "color_box red"){
-        gridBox.firstElementChild.classList.add("red_color");
-    }
-    else if (playerOneChoices.color == "color_box green"){
-        gridBox.firstElementChild.classList.add("green_color");
-    }
-    else{
-        gridBox.firstElementChild.classList.add("yellow_color");
-    }
-}*/
-
 function playerCharacterHolder(){
 
     if (playerOneChoices.symbol == "fab fa-fly"){
@@ -340,15 +329,5 @@ function startGame(){
 function resetGame(){
     resetButton.addEventListener("click", function(){
         location.reload();
-       /* //make an check if the player has made all his choices
-        classEraser();
-        //Change the display propterty on choices and game contianer
-        playerOneChoices.symbol ="none";
-        playerOneChoices.color = "none";
-        playerOneChoices.difficulty = "none";
-        mainGame.style.display = "none";
-        mainChoices.style.display = "flex";
-        */
-
     })
 }

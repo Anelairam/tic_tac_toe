@@ -14,8 +14,7 @@ var gridBoxes = document.getElementsByClassName("player_box");
 var hiddenChars = document.getElementsByClassName("check_holder");
 var playerOneChoices = 
     { symbol: "none",
-      color: "none",
-      difficulty: "none"}
+      color: "none"}
 
 var cpuChoices = 
     { symbol: "none",
@@ -34,22 +33,12 @@ var mySound = new Audio();
 var yourSound = new Audio();
     yourSound.src = "../assets/audio/p2.mp3";
     yourSound.volume = 0.3;
-
+var noSound = document.getElementById("no_sound");
+var soundOn = false;
 
 
 
 document.addEventListener("DOMContentLoaded", function(){
-
-    musicBtn.addEventListener("click", function(){
-        if(myAudio.muted == false){
-            myAudio.muted = true;
-        }
-        else{
-            myAudio.muted = false;
-        }
-        
-        
-    })
 
     playerChoose();
     startGame();
@@ -103,6 +92,31 @@ document.addEventListener("DOMContentLoaded", function(){
         }) 
     }
     resetGame();
+
+    musicBtn.addEventListener("click", function(){
+        if(myAudio.muted == false){
+            myAudio.muted = true;
+            musicBtn.style.color = "red";
+        }
+        else{
+            myAudio.muted = false;
+            musicBtn.style.color = "black";
+        }
+        this.style.border = "none";
+    })
+
+    noSound.addEventListener("click", function(){
+        if(mySound.muted == false){
+            mySound.muted = true;
+            yourSound.muted = true;
+        }
+        else{
+            mySound.muted = false;
+            yourSound.muted = false;
+        }
+
+        this.style.border = "none";
+    })
 })
 
 function gameResult(){
@@ -369,14 +383,6 @@ function playerChoose(){
            colorBox.classList.toggle("picked");     
         })
     }
-
-    //player chooses difficulty
-    for (let level of levels){
-        level.addEventListener("click", function(){
-           playerOneChoices.difficulty = this.className;
-           level.classList.toggle("picked");      
-        })
-    }    
 }
 
 function classEraser(){
@@ -392,7 +398,7 @@ function startGame(){
     startButton.addEventListener("click", function(){
         //Check if the player has made all his choices
         
-            if (playerOneChoices.symbol != "none" && playerOneChoices.color != "none" && playerOneChoices.difficulty != "none"){
+            if ((playerOneChoices.symbol != "none") && (playerOneChoices.color != "none")){
                 //Change the display propterty on choices and game contianer
                 playerCharacterHolder();
                 cpuCharChoose();

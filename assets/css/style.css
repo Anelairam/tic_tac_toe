@@ -276,6 +276,11 @@ h2 i{
     border-left: 2px solid black;
 }
 
+.grid_icon{
+    margin-top: 45px;
+    font-size: 120px;
+}
+
 /*Styles for the restart and reset buttons*/
 #res_btns{
     width: 40%;

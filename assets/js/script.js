@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for (let gridBox of gridBoxes){
         gridBox.addEventListener("click", function(){
+            //Try to make it neet through function but got problem with the parameter
+            //playerChoiceCharacter(gridBox);
             if (playerOneChoices.symbol == "fab fa-fly"){
                 gridBox.firstElementChild.classList.add("fab");
                 gridBox.firstElementChild.classList.add("fa-fly");
@@ -57,7 +59,37 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-
+/*function playerChoiceCharacter(x){
+    if (playerOneChoices.symbol == "fab fa-fly"){
+        gridBox.firstElementChild.classList.add("fab");
+        gridBox.firstElementChild.classList.add("fa-fly");
+    }
+    else if (playerOneChoices.symbol == "fas fa-paw"){
+        gridBox.firstElementChild.classList.add("fas");
+        gridBox.firstElementChild.classList.add("fa-paw");
+    }
+    else if (playerOneChoices.symbol == "fas fa-cloud"){
+        gridBox.firstElementChild.classList.add("fas");
+        gridBox.firstElementChild.classList.add("fa-cloud");
+    }
+    else{
+        gridBox.firstElementChild.classList.add("fab");
+        gridBox.firstElementChild.classList.add("fa-envira");
+    }
+    
+    if (playerOneChoices.color == "color_box blue"){
+        gridBox.firstElementChild.classList.add("blue_color");
+    }
+    else if (playerOneChoices.color == "color_box red"){
+        gridBox.firstElementChild.classList.add("red_color");
+    }
+    else if (playerOneChoices.color == "color_box green"){
+        gridBox.firstElementChild.classList.add("green_color");
+    }
+    else{
+        gridBox.firstElementChild.classList.add("yellow_color");
+    }
+}*/
 
 function playerCharacterHolder(){
 

@@ -75,14 +75,9 @@ function gameResult(){
         3-4-5   1-4-7   2-4-6
         6-7-8   2-5-8
     */
-    if (gridBoxes[0].firstElementChild.className == gridBoxes[1].firstElementChild.className){
-        if(gridBoxes[1].firstElementChild.className == gridBoxes[2].firstElementChild.className){
-            alert("You win");
-        }
-        else{
-            alert("You loose");
-        }
-    }
+   if ((gridBoxes[0].firstElementChild.className == gridBoxes[1].firstElementChild.className) && (gridBoxes[1].firstElementChild.className == gridBoxes[2].firstElementChild.className)){
+       console.log("correct");
+   }
 }
 
 function cpuMove(){

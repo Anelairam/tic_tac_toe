@@ -217,11 +217,12 @@ h2 i{
 #score_board{
     display: flex;
     flex-direction: column;
-    font-size: 19px;
+    
 }
 
 #score_board i{
     margin-bottom: 5px;
+    font-size: 38px;
 }
 
 
@@ -351,4 +352,22 @@ h2 i{
     #game_grid{
         width: 80%;
     }
+}
+
+@media screen and (max-width: 1024px){
+
+}
+
+/*Styling for tablets*/
+@media screen and (max-width: 768px){
+
+}
+
+/*Styling for iphone*/
+@media screen and (max-width: 414px){
+
+}
+
+@media screen and (max-width: 320px){
+    
 }

@@ -7,6 +7,8 @@ var colorBoxes = document.getElementsByClassName("color_box");
 var levels = document.getElementsByClassName("level_box");
 var playerOneHolder = document.getElementById("player_one_holder");
 var cpuHolder = document.getElementById("cpu_holder");
+var scorePlayOne = document.getElementById("score_p1");
+var scorePlayTwo = document.getElementById("score_p2");
 var gridBoxes = document.getElementsByClassName("player_box");
 var playerOneChoices = 
     { symbol: "none",
@@ -72,10 +74,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function gameResult(){
     //win combinations
+    var scoreTrackOne = 0;
+    var scoreTrackTwo = 0;
     for (let i=0; i<gridBoxes.length; i+=3){
         if(gridBoxes[i].firstElementChild.className !== "grid_icon"){
             if ((gridBoxes[i].firstElementChild.className == gridBoxes[i+1].firstElementChild.className) && (gridBoxes[i+1].firstElementChild.className == gridBoxes[i+2].firstElementChild.className)){
-                console.log("correct");
+                if (gridBoxes[i].firstElementChild.className == playerOneChoices.symbol){
+                    scorePlayOne.innerHTML = scoreTrackOne + 1;
+                }
+                else{
+                    scorePlayOne.innerHTML = scoreTrackTwo + 1;
+                }
             }
         }
     }
@@ -83,20 +92,29 @@ function gameResult(){
     for (let i=0; i<3; i++){
         if(gridBoxes[i].firstElementChild.className !== "grid_icon"){
             if ((gridBoxes[i].firstElementChild.className == gridBoxes[i+3].firstElementChild.className) && (gridBoxes[i+3].firstElementChild.className == gridBoxes[i+6].firstElementChild.className)){
-                console.log("correct");
+                scorePlayOne.innerHTML = scoreTrack + 1;
+            }
+            else{
+                scorePlayOne.innerHTML = scoreTrackTwo + 1;
             }
         }
     }
 
     if(gridBoxes[0].firstElementChild.className !== "grid_icon"){
         if ((gridBoxes[0].firstElementChild.className == gridBoxes[4].firstElementChild.className) && (gridBoxes[4].firstElementChild.className == gridBoxes[8].firstElementChild.className)){
-            console.log("correct");
+            scorePlayOne.innerHTML = scoreTrack + 1;
+        }
+        else{
+            scorePlayOne.innerHTML = scoreTrackTwo + 1;
         }
     }
 
     if(gridBoxes[2].firstElementChild.className !== "grid_icon"){
         if ((gridBoxes[2].firstElementChild.className == gridBoxes[4].firstElementChild.className) && (gridBoxes[4].firstElementChild.className == gridBoxes[6].firstElementChild.className)){
-            console.log("correct");
+            scorePlayOne.innerHTML = scoreTrack + 1;
+        }
+        else{
+            scorePlayOne.innerHTML = scoreTrackTwo + 1;
         }
     }
 }

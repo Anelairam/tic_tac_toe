@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
     playerChoose();
     startGame();
 
+    var count = 0;
     for (let gridBox of gridBoxes){
         gridBox.addEventListener("click", function(){
             //Try to make it neet through function but got problem with the parameter
@@ -57,7 +58,12 @@ document.addEventListener("DOMContentLoaded", function(){
             else{
                 gridBox.firstElementChild.classList.add("yellow_color");
             }
-            cpuMove();           
+            count ++;
+            
+            if (count <5){
+                cpuMove();
+            }
+                       
         }) 
     }
     resetGame();

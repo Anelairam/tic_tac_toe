@@ -127,6 +127,9 @@ function gamePlay(){
 
 function classEraser(){
     playerOneHolder.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
+    for (let gridBox of gridBoxes){
+        gridBox.firstElementChild.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
+    }
 }
 
 //Starts the game

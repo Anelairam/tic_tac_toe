@@ -297,21 +297,24 @@ function playerChoose(){
     //player chooses icon
     for (let icon of icons){
         icon.addEventListener("click", function(){
-           playerOneChoices.symbol = this.className;        
+           playerOneChoices.symbol = this.className;
+           icon.classList.toggle("picked");
         })
     }
 
     //player chooses color
     for (let colorBox of colorBoxes){
         colorBox.addEventListener("click", function(){
-           playerOneChoices.color = this.className;      
+           playerOneChoices.color = this.className; 
+           colorBox.classList.toggle("picked");     
         })
     }
 
     //player chooses difficulty
     for (let level of levels){
         level.addEventListener("click", function(){
-           playerOneChoices.difficulty = this.className;      
+           playerOneChoices.difficulty = this.className;
+           level.classList.toggle("picked");      
         })
     }    
 }

@@ -1,3 +1,4 @@
+
 var startButton = document.getElementById("str_btn");
 var resetButton = document.getElementById("rst_btn");
 var mainChoices = document.getElementById("main_choices_container");
@@ -10,6 +11,7 @@ var cpuHolder = document.getElementById("cpu_holder");
 var scorePlayOne = document.getElementById("score_p1");
 var scorePlayTwo = document.getElementById("score_p2");
 var gridBoxes = document.getElementsByClassName("player_box");
+var hiddenChars = document.getElementsByClassName("check_holder");
 var playerOneChoices = 
     { symbol: "none",
       color: "none",
@@ -19,9 +21,28 @@ var cpuChoices =
     { symbol: "none",
       color: "none"}
 
+var myAudio = new Audio();
+    myAudio.src = "../assets/audio/Kevin MacLeod Quirky Dog.mp3";
+    myAudio.volume = 0.1;
+    myAudio.loop = true;
+var musicBtn = document.getElementById("music_btn");
+var musicOn = false;
+
+
 
 
 document.addEventListener("DOMContentLoaded", function(){
+
+    musicBtn.addEventListener("click", function(){
+        if(myAudio.muted == false){
+            myAudio.muted = true;
+        }
+        else{
+            myAudio.muted = false;
+        }
+        
+        
+    })
 
     playerChoose();
     startGame();
@@ -60,12 +81,17 @@ document.addEventListener("DOMContentLoaded", function(){
             else{
                 gridBox.firstElementChild.classList.add("yellow_color");
             }
+            gridBox.firstElementChild.nextElementSibling.innerHTML = "x";
+            
             count ++;
 
-            if (count <5){
-                setTimeout(cpuMove, 1500);
-                setTimeout(gameResult, 1600);
-            }
+                if (count <5){
+                    setTimeout(cpuMove, 1500);
+                    if (count >2 ){
+                        setTimeout(gameResult, 1600);
+                    }
+                    
+                }           
                        
         }) 
     }
@@ -76,45 +102,68 @@ function gameResult(){
     //win combinations
     var scoreTrackOne = 0;
     var scoreTrackTwo = 0;
-    for (let i=0; i<gridBoxes.length; i+=3){
-        if(gridBoxes[i].firstElementChild.className !== "grid_icon"){
-            if ((gridBoxes[i].firstElementChild.className == gridBoxes[i+1].firstElementChild.className) && (gridBoxes[i+1].firstElementChild.className == gridBoxes[i+2].firstElementChild.className)){
-                if (gridBoxes[i].firstElementChild.className == playerOneChoices.symbol){
-                    scorePlayOne.innerHTML = scoreTrackOne + 1;
+    
+    for(let i=0; i<7; i+=3){
+        if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "x"){
+            if(gridBoxes[i+1].firstElementChild.nextElementSibling.innerHTML == "x"){
+                if(gridBoxes[i+2].firstElementChild.nextElementSibling.innerHTML == "x"){                    
+                    scorePlayOne.innerHTML = scoreTrackOne += 1;
                 }
-                else{
-                    scorePlayOne.innerHTML = scoreTrackTwo + 1;
+            }
+        }
+        else if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "o"){
+            if(gridBoxes[i+1].firstElementChild.nextElementSibling.innerHTML == "o"){
+                if(gridBoxes[i+2].firstElementChild.nextElementSibling.innerHTML == "o"){                    
+                    scorePlayTwo.innerHTML = scoreTrackTwo += 1;
                 }
             }
         }
     }
 
     for (let i=0; i<3; i++){
-        if(gridBoxes[i].firstElementChild.className !== "grid_icon"){
-            if ((gridBoxes[i].firstElementChild.className == gridBoxes[i+3].firstElementChild.className) && (gridBoxes[i+3].firstElementChild.className == gridBoxes[i+6].firstElementChild.className)){
-                scorePlayOne.innerHTML = scoreTrack + 1;
+        if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "x"){
+            if(gridBoxes[i+3].firstElementChild.nextElementSibling.innerHTML == "x"){
+                if(gridBoxes[i+6].firstElementChild.nextElementSibling.innerHTML == "x"){                    
+                    scorePlayOne.innerHTML = scoreTrackOne += 1;
+                }
             }
-            else{
-                scorePlayOne.innerHTML = scoreTrackTwo + 1;
+            else if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "o"){
+                if(gridBoxes[i+3].firstElementChild.nextElementSibling.innerHTML == "o"){
+                    if(gridBoxes[i+6].firstElementChild.nextElementSibling.innerHTML == "o"){                    
+                        scorePlayTwo.innerHTML = scoreTrackTwo += 1;
+                    }
+                }
+            }
+        }
+    }
+    
+    if(gridBoxes[0].firstElementChild.nextElementSibling.innerHTML == "x"){
+        if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "x"){
+            if(gridBoxes[8].firstElementChild.nextElementSibling.innerHTML == "x"){                    
+                scorePlayOne.innerHTML = scoreTrackOne += 1;
+            }
+        }
+        else if(gridBoxes[0].firstElementChild.nextElementSibling.innerHTML == "o"){
+            if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "o"){
+                if(gridBoxes[8].firstElementChild.nextElementSibling.innerHTML == "o"){                    
+                    scorePlayTwo.innerHTML = scoreTrackTwo += 1;
+                }
             }
         }
     }
 
-    if(gridBoxes[0].firstElementChild.className !== "grid_icon"){
-        if ((gridBoxes[0].firstElementChild.className == gridBoxes[4].firstElementChild.className) && (gridBoxes[4].firstElementChild.className == gridBoxes[8].firstElementChild.className)){
-            scorePlayOne.innerHTML = scoreTrack + 1;
+    if(gridBoxes[2].firstElementChild.nextElementSibling.innerHTML == "x"){
+        if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "x"){
+            if(gridBoxes[6].firstElementChild.nextElementSibling.innerHTML == "x"){                    
+                scorePlayOne.innerHTML = scoreTrackOne += 1;
+            }
         }
-        else{
-            scorePlayOne.innerHTML = scoreTrackTwo + 1;
-        }
-    }
-
-    if(gridBoxes[2].firstElementChild.className !== "grid_icon"){
-        if ((gridBoxes[2].firstElementChild.className == gridBoxes[4].firstElementChild.className) && (gridBoxes[4].firstElementChild.className == gridBoxes[6].firstElementChild.className)){
-            scorePlayOne.innerHTML = scoreTrack + 1;
-        }
-        else{
-            scorePlayOne.innerHTML = scoreTrackTwo + 1;
+        else if(gridBoxes[2].firstElementChild.nextElementSibling.innerHTML == "o"){
+            if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "o"){
+                if(gridBoxes[6].firstElementChild.nextElementSibling.innerHTML == "o"){                    
+                    scorePlayTwo.innerHTML = scoreTrackTwo += 1;
+                }
+            }
         }
     }
 }
@@ -152,6 +201,8 @@ function cpuMove(){
         else{
             gridBoxes[move].firstElementChild.classList.add("yellow_color");
         }
+
+        hiddenChars[move].innerHTML = "o";
     }
     else{
         cpuMove();
@@ -297,6 +348,8 @@ function playerChoose(){
     //player chooses icon
     for (let icon of icons){
         icon.addEventListener("click", function(){
+           myAudio.play();
+           musicOn == true;
            playerOneChoices.symbol = this.className;
            icon.classList.toggle("picked");
         })

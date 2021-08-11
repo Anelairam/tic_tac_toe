@@ -53,7 +53,7 @@ header{
     cursor: pointer;
 }
 
-#music-btn{
+#music_btn{
     margin-left: 100px;
 }
 
@@ -296,6 +296,10 @@ h2 i{
 .grid_icon{
     margin-top: 45px;
     font-size: 120px;
+}
+
+.check_holder{
+    display: none;
 }
 
 /*Styles for the restart and reset buttons*/

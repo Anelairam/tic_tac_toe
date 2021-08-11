@@ -4,6 +4,7 @@ var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
 var playerOneHolder = document.getElementById("player_one_holder");
 var gridBoxes = document.getElementsByClassName("player_box");
+//var gridIcons = document.getElementsByClassName("grid_icon");
 var triger = false;
 var playerOneChoices = 
     { symbol: "none",
@@ -19,11 +20,41 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for (let gridBox of gridBoxes){
         gridBox.addEventListener("click", function(){
-            console.log(gridBox);
-        })
-    }    
+            if (playerOneChoices.symbol == "fab fa-fly"){
+                gridBox.firstElementChild.classList.add("fab");
+                gridBox.firstElementChild.classList.add("fa-fly");
+            }
+            else if (playerOneChoices.symbol == "fas fa-paw"){
+                gridBox.firstElementChild.classList.add("fas");
+                gridBox.firstElementChild.classList.add("fa-paw");
+            }
+            else if (playerOneChoices.symbol == "fas fa-cloud"){
+                gridBox.firstElementChild.classList.add("fas");
+                gridBox.firstElementChild.classList.add("fa-cloud");
+            }
+            else{
+                gridBox.firstElementChild.classList.add("fab");
+                gridBox.firstElementChild.classList.add("fa-envira");
+            }
+            
+            if (playerOneChoices.color == "color_box blue"){
+                gridBox.firstElementChild.classList.add("blue_color");
+            }
+            else if (playerOneChoices.color == "color_box red"){
+                gridBox.firstElementChild.classList.add("red_color");
+            }
+            else if (playerOneChoices.color == "color_box green"){
+                gridBox.firstElementChild.classList.add("green_color");
+            }
+            else{
+                gridBox.firstElementChild.classList.add("yellow_color");
+            }
+
+        }) 
+    }
     resetGame();
 })
+
 
 
 

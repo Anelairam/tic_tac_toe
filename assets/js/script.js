@@ -1,20 +1,31 @@
 
+//variable selection
+
+//Button selection
 var startButton = document.getElementById("str_btn");
 var resetButton = document.getElementById("rst_btn");
+
+//Main structure landpage selections
 var mainChoices = document.getElementById("main_choices_container");
-var mainGame = document.getElementById("main_game_container");
-var missingChoices = document.getElementById("missing_choices");
 var icons = document.getElementsByTagName("i");
 var colorBoxes = document.getElementsByClassName("color_box");
+
+//Main game selection
+var mainGame = document.getElementById("main_game_container");
+var missingChoices = document.getElementById("missing_choices");
 var gameGrid = document.getElementById("game_grid");
+var gridBoxes = document.getElementsByClassName("player_box");
+
+//Score area selections
 var playerOneHolder = document.getElementById("player_one_holder");
 var cpuHolder = document.getElementById("cpu_holder");
 var scoreBoard = document.getElementById("score_board");
 var scorePlayOne = document.getElementById("score_p1");
 var scorePlayTwo = document.getElementById("score_p2");
-var gridBoxes = document.getElementsByClassName("player_box");
 var hiddenChars = document.getElementsByClassName("check_holder");
 var winStatus = document.getElementById("win_status");
+
+//Players Objects creation
 var playerOneChoices = 
     { symbol: "none",
       color: "none"}
@@ -23,6 +34,8 @@ var cpuChoices =
     { symbol: "none",
       color: "none"}
 
+
+ //Music and audio selectors
 var myAudio = new Audio();
     myAudio.src = "../assets/audio/Kevin MacLeod Quirky Dog.mp3";
     myAudio.volume = 0.1;
@@ -46,13 +59,15 @@ var soundOn = false;
 var endGame = false;
 
 
-
+//Main function
 document.addEventListener("DOMContentLoaded", function(){
-
+    //Sets the options for the player
     playerChoose();
+    //Start the game
     startGame();
 
     var count = 0;
+    //Add the player's icon into the grid boxes
     for (let gridBox of gridBoxes){
         gridBox.addEventListener("click", function(){
             //Try to make it neet through function but got problem with the parameter
@@ -89,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function(){
             gridBox.firstElementChild.nextElementSibling.innerHTML = "x";
             mySound.play();
             count ++;
-
+                //Move check
                 if (count <5){
                     if (endGame == false){
                         setTimeout(cpuMove, 1500);
@@ -105,8 +120,10 @@ document.addEventListener("DOMContentLoaded", function(){
                        
         }) 
     }
+    //Reset the game
     resetGame();
 
+    //Music and audio styles and features
     musicBtn.addEventListener("click", function(){
         if(myAudio.muted == false){
             myAudio.muted = true;
@@ -133,6 +150,8 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 })
 
+
+//Find the winner function
 function gameResult(){
     //win combinations
     var scoreTrackOne = 0;
@@ -140,6 +159,7 @@ function gameResult(){
     
     status.fi
 
+    //Checks for player's combinations 0-1-2,3-4-5, 6-7-8
     for(let i=0; i<7; i+=3){
         if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "x"){
             if(gridBoxes[i+1].firstElementChild.nextElementSibling.innerHTML == "x"){
@@ -154,6 +174,7 @@ function gameResult(){
                 }
             }
         }
+        //Checks for opponent's combinations 0-1-2,3-4-5, 6-7-8
         else if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "o"){
             if(gridBoxes[i+1].firstElementChild.nextElementSibling.innerHTML == "o"){
                 if(gridBoxes[i+2].firstElementChild.nextElementSibling.innerHTML == "o"){                    
@@ -169,7 +190,7 @@ function gameResult(){
             }
         }
     }
-
+    //Checks for combinations 0-3-6, 1-4-7, 2-5-8
     for (let i=0; i<3; i++){
         if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "x"){
             if(gridBoxes[i+3].firstElementChild.nextElementSibling.innerHTML == "x"){
@@ -200,6 +221,7 @@ function gameResult(){
         }
     }
     
+    //Checks for player's combinations 0-4-8
     if(gridBoxes[0].firstElementChild.nextElementSibling.innerHTML == "x"){
         if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "x"){
             if(gridBoxes[8].firstElementChild.nextElementSibling.innerHTML == "x"){                    
@@ -212,6 +234,7 @@ function gameResult(){
                 setTimeout(reloadPage, 15000);
             }
         }
+        //Checks for opponent's combinations 0-4-8
         else if(gridBoxes[0].firstElementChild.nextElementSibling.innerHTML == "o"){
             if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "o"){
                 if(gridBoxes[8].firstElementChild.nextElementSibling.innerHTML == "o"){                    
@@ -228,6 +251,7 @@ function gameResult(){
         }
     }
 
+    //Checks for player's combinations 2-4-6
     if(gridBoxes[2].firstElementChild.nextElementSibling.innerHTML == "x"){
         if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "x"){
             if(gridBoxes[6].firstElementChild.nextElementSibling.innerHTML == "x"){                    
@@ -240,6 +264,7 @@ function gameResult(){
                 setTimeout(reloadPage, 15000);
             }
         }
+        //Checks for opponent's combinations 2-4-6
         else if(gridBoxes[2].firstElementChild.nextElementSibling.innerHTML == "o"){
             if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "o"){
                 if(gridBoxes[6].firstElementChild.nextElementSibling.innerHTML == "o"){                    
@@ -257,6 +282,8 @@ function gameResult(){
     }
 }
 
+
+//Moves the cpu player
 function cpuMove(){
     let move = Math.floor(Math.random() *9);
 
@@ -298,6 +325,7 @@ function cpuMove(){
     }
 }
 
+//Chooses the cpu character
 function cpuCharChoose(){
     let num = Math.floor(Math.random() *4);
     if (num == 0){
@@ -397,6 +425,7 @@ function cpuCharChoose(){
 
 }
 
+//Placeholder for the player's choices
 function playerCharacterHolder(){
 
     if (playerOneChoices.symbol == "fab fa-fly"){
@@ -461,6 +490,7 @@ function playerChoose(){
     }
 }
 
+//Erases all the players choices
 function classEraser(){
     playerOneHolder.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
     cpuHolder.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
@@ -500,6 +530,8 @@ function resetGame(){
     })
 }
 
+
+//Reloads the page
 function reloadPage(){
     location.reload();
 }

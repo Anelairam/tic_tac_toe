@@ -43,8 +43,7 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
 
 - A round of testings happened due to the entire deployment of the project mostly used tool for the testing was the browsers development tools.
 - In this stage it was noticed that in the project in the beginning. However, after several trials the randomisation and customisation of the players compinations started to     mallfuction without any profound reason.
-- Some intresting bugs that are not yet addressed are that during the randomisation of the cpu choices at some combinations the choices can not be hold from the object compaired to others, also the are not. This affects the main score however, it does not interupt the game play.
-
+- Some intresting bugs that are not yet addressed are that during the randomisation of the cpu choices at some combinations the choices can not be hold from the object compaired to others, also the are not. This affects the main score of the game.
 [Bug Picture](https://github.com/Anelairam/tic_tac_toe/blob/main/bug.jpg)
 
 
@@ -58,8 +57,13 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
 
 ### Unfixed Bugs
 
--Unfixed bugs are the the random customisations of the cpu player, these bugs does not allow the compination of styles to work together and show the desired and accurate result.
+-Unfixed bugs are the the random customisations of the cpu player, these bugs does not allow the combinations of styles to work together and show the desired and accurate result.
  
+### Future updates
+
+- During the deployemnt of the project gained some extra features that are going to be inclued to the nearest updates. These updates are:
+
+
 
 ## Deployment
 

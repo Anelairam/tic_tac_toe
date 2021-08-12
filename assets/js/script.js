@@ -69,9 +69,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     var count = 0;
     //Add the player's icon into the grid boxes
-    for (let gridBox of gridBoxes){
-        gridBox.addEventListener("click", function(){
-            if(stopTriger !== "p"){
+    if(stopTriger !== "p"){
+        for (let gridBox of gridBoxes){        
+            gridBox.addEventListener("click", function(){
+           
                 if (playerOneChoices.symbol == "fab fa-fly"){
                     gridBox.firstElementChild.classList.add("fab");
                     gridBox.firstElementChild.classList.add("fa-fly");
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 else{
                     gridBox.firstElementChild.classList.add("yellow_color");
                 }
-            }
+            
             gridBox.firstElementChild.nextElementSibling.innerHTML = "x";
             mySound.play();
             count ++;
@@ -120,10 +121,12 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
                 else{
                     winStatus.firstElementChild.innerHTML = "Draw!";
+                    winStatus.style.color = "purple";
                     winStatus.style.display = "block";
                 }       
                        
-        }) 
+            })
+        } 
     }
     //Reset the game
     resetGame();

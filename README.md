@@ -1,8 +1,7 @@
 # Tic Tac Toe
 
 Tic Tac Toe is an online game with mutliple customisation options on the player's icon and color.
-![Responsice Mockup](https://github.com/Anelairam/picturegreece/blob/master/responsive.jpg)
-![Responsice Mockup](https://github.com/Anelairam/picturegreece/blob/master/responsive2.jpg)
+![Responsice Mockup](https://github.com/Anelairam/tic_tac_toe/blob/main/responsive.jpg)
 
 
 ### Existing Features

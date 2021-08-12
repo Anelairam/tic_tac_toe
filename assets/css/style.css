@@ -305,6 +305,14 @@ h2 i{
     display: none;
 }
 
+
+#win_status{
+    display: none;
+    width: 80%;
+    font-size: 78px;
+    color: green;
+}
+
 /*Styles for the restart and reset buttons*/
 #res_btns{
     width: 40%;
@@ -449,6 +457,11 @@ h2 i{
     #res_btns{
         height: 110px;
     }
+
+    #win_status{
+        display: none;
+        font-size: 52px;
+    }
 }
 
 /*Styling for iphone*/
@@ -536,6 +549,11 @@ h2 i{
         font-size: 50px;
     }
 
+    #win_status{
+        display: none;
+        font-size: 35px;
+    }
+
 }
 
 @media screen and (max-width: 375px){
@@ -591,5 +609,10 @@ h2 i{
 
     #rst_btn h2{
         font-size: 20px;
+    }
+
+    #win_status{
+        display: none;
+        font-size: 28px;
     }
 }

@@ -6,12 +6,15 @@ var mainGame = document.getElementById("main_game_container");
 var missingChoices = document.getElementById("missing_choices");
 var icons = document.getElementsByTagName("i");
 var colorBoxes = document.getElementsByClassName("color_box");
+var gameGrid = document.getElementById("game_grid");
 var playerOneHolder = document.getElementById("player_one_holder");
 var cpuHolder = document.getElementById("cpu_holder");
+var scoreBoard = document.getElementById("score_board");
 var scorePlayOne = document.getElementById("score_p1");
 var scorePlayTwo = document.getElementById("score_p2");
 var gridBoxes = document.getElementsByClassName("player_box");
 var hiddenChars = document.getElementsByClassName("check_holder");
+var winStatus = document.getElementById("win_status");
 var playerOneChoices = 
     { symbol: "none",
       color: "none"}
@@ -28,7 +31,10 @@ var musicBtn = document.getElementById("music_btn");
 var musicOn = false;
 var winAudion = new Audio();
     winAudion.src = "../assets/audio/win.mp3"
-
+    winAudion.volume = 0.1;
+var looseAudion = new Audio();
+    looseAudion.src = "../assets/audio/loose.mp3"
+    looseAudion.volume = 0.1;
 var mySound = new Audio();
     mySound.src = "../assets/audio/p1.mp3";
     mySound.volume = 0.3;
@@ -37,6 +43,7 @@ var yourSound = new Audio();
     yourSound.volume = 0.3;
 var noSound = document.getElementById("no_sound");
 var soundOn = false;
+var endGame = false;
 
 
 
@@ -84,12 +91,17 @@ document.addEventListener("DOMContentLoaded", function(){
             count ++;
 
                 if (count <5){
-                    setTimeout(cpuMove, 1500);
-                    if (count >2 ){
-                        setTimeout(gameResult, 1600);
-                    }
-                    
-                }           
+                    if (endGame == false){
+                        setTimeout(cpuMove, 1500);
+                        if (count >2 ){
+                            setTimeout(gameResult, 1600);
+                        }
+                    }                    
+                }
+                else{
+                    winStatus.firstElementChild.innerHTML = "Draw!";
+                    winStatus.style.display = "block";
+                }       
                        
         }) 
     }
@@ -126,11 +138,19 @@ function gameResult(){
     var scoreTrackOne = 0;
     var scoreTrackTwo = 0;
     
+    status.fi
+
     for(let i=0; i<7; i+=3){
         if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "x"){
             if(gridBoxes[i+1].firstElementChild.nextElementSibling.innerHTML == "x"){
                 if(gridBoxes[i+2].firstElementChild.nextElementSibling.innerHTML == "x"){                    
                     scorePlayOne.innerHTML = scoreTrackOne += 1;
+                    winAudion.play();
+                    endGame = true;
+                    setTimeout(resultView, 7500);
+                    winStatus.firstElementChild.innerHTML = "You Win!";
+                    winStatus.style.display = "block";
+                    setTimeout(reloadPage, 15000);
                 }
             }
         }
@@ -138,6 +158,13 @@ function gameResult(){
             if(gridBoxes[i+1].firstElementChild.nextElementSibling.innerHTML == "o"){
                 if(gridBoxes[i+2].firstElementChild.nextElementSibling.innerHTML == "o"){                    
                     scorePlayTwo.innerHTML = scoreTrackTwo += 1;
+                    looseAudion.play();
+                    endGame = true;
+                    setTimeout(resultView, 7500);
+                    winStatus.firstElementChild.innerHTML = "You Loose!";
+                    winStatus.style.display = "block";
+                    winStatus.style.color = "red";
+                    setTimeout(reloadPage, 15000);
                 }
             }
         }
@@ -148,12 +175,25 @@ function gameResult(){
             if(gridBoxes[i+3].firstElementChild.nextElementSibling.innerHTML == "x"){
                 if(gridBoxes[i+6].firstElementChild.nextElementSibling.innerHTML == "x"){                    
                     scorePlayOne.innerHTML = scoreTrackOne += 1;
+                    winAudion.play();
+                    endGame = true;
+                    setTimeout(resultView, 7500);
+                    winStatus.firstElementChild.innerHTML = "You Win!";
+                    winStatus.style.display = "block";
+                    setTimeout(reloadPage, 15000);
                 }
             }
             else if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "o"){
                 if(gridBoxes[i+3].firstElementChild.nextElementSibling.innerHTML == "o"){
                     if(gridBoxes[i+6].firstElementChild.nextElementSibling.innerHTML == "o"){                    
                         scorePlayTwo.innerHTML = scoreTrackTwo += 1;
+                        looseAudion.play();
+                        endGame = true;
+                        setTimeout(resultView, 7500);                            
+                        winStatus.firstElementChild.innerHTML = "You Loose!";
+                        winStatus.style.display = "block";
+                        winStatus.style.color = "red";                            
+                        setTimeout(reloadPage, 15000);
                     }
                 }
             }
@@ -164,12 +204,25 @@ function gameResult(){
         if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "x"){
             if(gridBoxes[8].firstElementChild.nextElementSibling.innerHTML == "x"){                    
                 scorePlayOne.innerHTML = scoreTrackOne += 1;
+                winAudion.play();
+                endGame = true;
+                setTimeout(resultView, 7500);                    
+                winStatus.firstElementChild.innerHTML = "You Win!";
+                winStatus.style.display = "block";  
+                setTimeout(reloadPage, 15000);
             }
         }
         else if(gridBoxes[0].firstElementChild.nextElementSibling.innerHTML == "o"){
             if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "o"){
                 if(gridBoxes[8].firstElementChild.nextElementSibling.innerHTML == "o"){                    
                     scorePlayTwo.innerHTML = scoreTrackTwo += 1;
+                    looseAudion.play();
+                    endGame = true;
+                    setTimeout(resultView, 7500);                        
+                    winStatus.firstElementChild.innerHTML = "You Loose!";
+                    winStatus.style.display = "block";
+                    winStatus.style.color = "red";                        
+                    setTimeout(reloadPage, 15000);
                 }
             }
         }
@@ -179,12 +232,25 @@ function gameResult(){
         if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "x"){
             if(gridBoxes[6].firstElementChild.nextElementSibling.innerHTML == "x"){                    
                 scorePlayOne.innerHTML = scoreTrackOne += 1;
+                winAudion.play();
+                endGame = true;
+                setTimeout(resultView, 7500);
+                winStatus.firstElementChild.innerHTML = "You Win!";
+                winStatus.style.display = "block";
+                setTimeout(reloadPage, 15000);
             }
         }
         else if(gridBoxes[2].firstElementChild.nextElementSibling.innerHTML == "o"){
             if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "o"){
                 if(gridBoxes[6].firstElementChild.nextElementSibling.innerHTML == "o"){                    
                     scorePlayTwo.innerHTML = scoreTrackTwo += 1;
+                    looseAudion.play();
+                    endGame = true;
+                    setTimeout(resultView, 7500);                        
+                    winStatus.firstElementChild.innerHTML = "You Loose!";
+                    winStatus.style.display = "block";
+                    winStatus.style.color = "red";                        
+                    setTimeout(reloadPage, 15000);
                 }
             }
         }
@@ -422,9 +488,18 @@ function startGame(){
     })
 }
 
+function resultView(){
+    scoreBoard.style.display = "none";
+    gameGrid.style.display = "none";
+}
+
 //Resets the game
 function resetGame(){
     resetButton.addEventListener("click", function(){
         location.reload();
     })
+}
+
+function reloadPage(){
+    location.reload();
 }

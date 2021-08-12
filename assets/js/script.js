@@ -94,18 +94,18 @@ document.addEventListener("DOMContentLoaded", function(){
             mySound.play();
             count ++;
                 //Move check
-                if (count <5){
+                if (count <6){
                     if (endGame == false){
-                        setTimeout(cpuMove, 1500);
                         setTimeout(cpuMove, 750);
                         if (count >2 ){
-                            setTimeout(gameResult, 1600);
+                            setTimeout(gameResult, 800);
                         }
                     }                    
                 }
                 else{
                     winStatus.firstElementChild.innerHTML = "Draw!";
                     winStatus.style.display = "block";
+                    winStatus.style.color = "purple";
                 }       
                        
         }) 
@@ -156,7 +156,7 @@ function gameResult(){
                     setTimeout(resultView, 7500);
                     winStatus.firstElementChild.innerHTML = "You Win!";
                     winStatus.style.display = "block";
-                    setTimeout(reloadPage, 15000);
+                    setTimeout(reloadPage, 9500);
                 }
             }
         }
@@ -171,7 +171,7 @@ function gameResult(){
                     winStatus.firstElementChild.innerHTML = "You Loose!";
                     winStatus.style.display = "block";
                     winStatus.style.color = "red";
-                    setTimeout(reloadPage, 15000);
+                    setTimeout(reloadPage, 9500);
                 }
             }
         }
@@ -187,7 +187,7 @@ function gameResult(){
                     setTimeout(resultView, 7500);
                     winStatus.firstElementChild.innerHTML = "You Win!";
                     winStatus.style.display = "block";
-                    setTimeout(reloadPage, 15000);
+                    setTimeout(reloadPage, 9500);
                 }
             }
             else if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "o"){
@@ -200,7 +200,7 @@ function gameResult(){
                         winStatus.firstElementChild.innerHTML = "You Loose!";
                         winStatus.style.display = "block";
                         winStatus.style.color = "red";                            
-                        setTimeout(reloadPage, 15000);
+                        setTimeout(reloadPage, 9500);
                     }
                 }
             }
@@ -217,7 +217,7 @@ function gameResult(){
                 setTimeout(resultView, 7500);                    
                 winStatus.firstElementChild.innerHTML = "You Win!";
                 winStatus.style.display = "block";  
-                setTimeout(reloadPage, 15000);
+                setTimeout(reloadPage, 9500);
             }
         }
         //Checks for opponent's combinations 0-4-8
@@ -231,7 +231,7 @@ function gameResult(){
                     winStatus.firstElementChild.innerHTML = "You Loose!";
                     winStatus.style.display = "block";
                     winStatus.style.color = "red";                        
-                    setTimeout(reloadPage, 15000);
+                    setTimeout(reloadPage, 9500);
                 }
             }
         }
@@ -246,7 +246,7 @@ function gameResult(){
                 setTimeout(resultView, 7500);
                 winStatus.firstElementChild.innerHTML = "You Win!";
                 winStatus.style.display = "block";
-                setTimeout(reloadPage, 15000);
+                setTimeout(reloadPage, 9500);
             }
         }
         //Checks for opponent's combinations 2-4-6
@@ -260,7 +260,7 @@ function gameResult(){
                     winStatus.firstElementChild.innerHTML = "You Loose!";
                     winStatus.style.display = "block";
                     winStatus.style.color = "red";                        
-                    setTimeout(reloadPage, 15000);
+                    setTimeout(reloadPage, 9500);
                 }
             }
         }
@@ -498,6 +498,7 @@ function resultView(){
 function resetGame(){
     resetButton.addEventListener("click", function(){
         location.reload();
+        startGame();
     })
 }
 //Reloads the page

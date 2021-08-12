@@ -62,7 +62,8 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
 ### Future updates
 
 - During the deployemnt of the project gained some extra features that are going to be inclued to the nearest updates. These updates are:
-
+- Audio features to allow the user to increase and dicrease the volume of the music and sound.
+- One extra qualification in order for the game to start, the difficulty level. Will include a difficulty level with a countdown timmer based on the difficulty that the player choose and see hom many wins can he do in these amount of time
 
 
 ## Deployment

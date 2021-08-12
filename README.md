@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-Tic Tac Toe is an online game with mutliple customisation options on the player's icon, color and level's difficutly.
+Tic Tac Toe is an online game with mutliple customisation options on the player's icon and color.
 ![Responsice Mockup](https://github.com/Anelairam/picturegreece/blob/master/responsive.jpg)
 ![Responsice Mockup](https://github.com/Anelairam/picturegreece/blob/master/responsive2.jpg)
 

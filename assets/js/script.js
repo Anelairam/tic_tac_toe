@@ -1,22 +1,17 @@
 
-//variables selection
-var stopTriger = "n";
-
+//variable selection
 //Button selection
 var startButton = document.getElementById("str_btn");
 var resetButton = document.getElementById("rst_btn");
-
 //Main structure landpage selections
 var mainChoices = document.getElementById("main_choices_container");
 var icons = document.getElementsByTagName("i");
 var colorBoxes = document.getElementsByClassName("color_box");
-
 //Main game selection
 var mainGame = document.getElementById("main_game_container");
 var missingChoices = document.getElementById("missing_choices");
 var gameGrid = document.getElementById("game_grid");
 var gridBoxes = document.getElementsByClassName("player_box");
-
 //Score area selections
 var playerOneHolder = document.getElementById("player_one_holder");
 var cpuHolder = document.getElementById("cpu_holder");
@@ -25,17 +20,13 @@ var scorePlayOne = document.getElementById("score_p1");
 var scorePlayTwo = document.getElementById("score_p2");
 var hiddenChars = document.getElementsByClassName("check_holder");
 var winStatus = document.getElementById("win_status");
-
 //Players Objects creation
 var playerOneChoices = 
     { symbol: "none",
       color: "none"}
-
 var cpuChoices = 
     { symbol: "none",
       color: "none"}
-
-
  //Music and audio selectors
 var myAudio = new Audio();
     myAudio.src = "../assets/audio/Kevin MacLeod Quirky Dog.mp3";
@@ -58,82 +49,69 @@ var yourSound = new Audio();
 var noSound = document.getElementById("no_sound");
 var soundOn = false;
 var endGame = false;
-
-
 //Main function
 document.addEventListener("DOMContentLoaded", function(){
     //Sets the options for the player
     playerChoose();
     //Start the game
     startGame();
-
     var count = 0;
     //Add the player's icon into the grid boxes
-   
     for (let gridBox of gridBoxes){
-        while (stopTriger !== "p"){        
-            gridBox.addEventListener("click", function(){
-           
-                if (playerOneChoices.symbol == "fab fa-fly"){
-                    gridBox.firstElementChild.classList.add("fab");
-                    gridBox.firstElementChild.classList.add("fa-fly");
-                    stopTriger = "p";
-                }
-                else if (playerOneChoices.symbol == "fas fa-paw"){
-                    gridBox.firstElementChild.classList.add("fas");
-                    gridBox.firstElementChild.classList.add("fa-paw");
-                    stopTriger = "p";
-                }
-                else if (playerOneChoices.symbol == "fas fa-cloud"){
-                    gridBox.firstElementChild.classList.add("fas");
-                    gridBox.firstElementChild.classList.add("fa-cloud");
-                    stopTriger = "p";
-                }
-                else{
-                    gridBox.firstElementChild.classList.add("fab");
-                    gridBox.firstElementChild.classList.add("fa-envira");
-                    stopTriger = "p";
-                }
-                    
-                if (playerOneChoices.color == "color_box blue"){
-                    gridBox.firstElementChild.classList.add("blue_color");
-                }
-                else if (playerOneChoices.color == "color_box red"){
-                    gridBox.firstElementChild.classList.add("red_color");
-                }
-                else if (playerOneChoices.color == "color_box green"){
-                    gridBox.firstElementChild.classList.add("green_color");
-                }
-                else{
-                    gridBox.firstElementChild.classList.add("yellow_color");
-                }
-            })
-        }
+        gridBox.addEventListener("click", function(){
+            //Try to make it neet through function but got problem with the parameter
+            //playerChoiceCharacter(gridBox);
+            if (playerOneChoices.symbol == "fab fa-fly"){
+                gridBox.firstElementChild.classList.add("fab");
+                gridBox.firstElementChild.classList.add("fa-fly");
+            }
+            else if (playerOneChoices.symbol == "fas fa-paw"){
+                gridBox.firstElementChild.classList.add("fas");
+                gridBox.firstElementChild.classList.add("fa-paw");
+            }
+            else if (playerOneChoices.symbol == "fas fa-cloud"){
+                gridBox.firstElementChild.classList.add("fas");
+                gridBox.firstElementChild.classList.add("fa-cloud");
+            }
+            else{
+                gridBox.firstElementChild.classList.add("fab");
+                gridBox.firstElementChild.classList.add("fa-envira");
+            }
             
+            if (playerOneChoices.color == "color_box blue"){
+                gridBox.firstElementChild.classList.add("blue_color");
+            }
+            else if (playerOneChoices.color == "color_box red"){
+                gridBox.firstElementChild.classList.add("red_color");
+            }
+            else if (playerOneChoices.color == "color_box green"){
+                gridBox.firstElementChild.classList.add("green_color");
+            }
+            else{
+                gridBox.firstElementChild.classList.add("yellow_color");
+            }
             gridBox.firstElementChild.nextElementSibling.innerHTML = "x";
             mySound.play();
             count ++;
-            //Move check
-            if (count <5){
-                if (endGame == false){
-                    setTimeout(cpuMove, 750);
-                    if (count >2 ){
-                        setTimeout(gameResult, 1600);
-                    }
-                }                    
-            }
-            else{
-                winStatus.firstElementChild.innerHTML = "Draw!";
-                winStatus.style.color = "purple";
-                winStatus.style.display = "block";
-            }       
+                //Move check
+                if (count <5){
+                    if (endGame == false){
+                        setTimeout(cpuMove, 1500);
+                        setTimeout(cpuMove, 750);
+                        if (count >2 ){
+                            setTimeout(gameResult, 1600);
+                        }
+                    }                    
+                }
+                else{
+                    winStatus.firstElementChild.innerHTML = "Draw!";
+                    winStatus.style.display = "block";
+                }       
                        
-            
-        } 
-    
+        }) 
+    }
     //Reset the game
     resetGame();
-
     //Music and audio styles and features
     musicBtn.addEventListener("click", function(){
         if(myAudio.muted == false){
@@ -146,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         this.style.border = "none";
     })
-
     noSound.addEventListener("click", function(){
         if(mySound.muted == false){
             mySound.muted = true;
@@ -158,12 +135,9 @@ document.addEventListener("DOMContentLoaded", function(){
             yourSound.muted = false;
             noSound.style.color = "black";
         }
-
         this.style.border = "none";
     })
 })
-
-
 //Find the winner function
 function gameResult(){
     //win combinations
@@ -171,7 +145,6 @@ function gameResult(){
     var scoreTrackTwo = 0;
     
     status.fi
-
     //Checks for player's combinations 0-1-2,3-4-5, 6-7-8
     for(let i=0; i<7; i+=3){
         if(gridBoxes[i].firstElementChild.nextElementSibling.innerHTML == "x"){
@@ -263,7 +236,6 @@ function gameResult(){
             }
         }
     }
-
     //Checks for player's combinations 2-4-6
     if(gridBoxes[2].firstElementChild.nextElementSibling.innerHTML == "x"){
         if(gridBoxes[4].firstElementChild.nextElementSibling.innerHTML == "x"){
@@ -294,17 +266,13 @@ function gameResult(){
         }
     }
 }
-
-
 //Moves the cpu player
 function cpuMove(){
     let move = Math.floor(Math.random() *9);
-    stopTriger = "c";
     if (gridBoxes[move].firstElementChild.className == "grid_icon"){
         if (cpuChoices.symbol == "fab fa-fly"){
             gridBoxes[move].firstElementChild.classList.add("fab");
             gridBoxes[move].firstElementChild.classList.add("fa-fly");
-            
         }
         else if (cpuChoices.symbol == "fas fa-paw"){
             gridBoxes[move].firstElementChild.classList.add("fas");
@@ -338,7 +306,6 @@ function cpuMove(){
         cpuMove();
     }
 }
-
 //Chooses the cpu character
 function cpuCharChoose(){
     let num = Math.floor(Math.random() *4);
@@ -347,7 +314,6 @@ function cpuCharChoose(){
             cpuHolder.classList.add("fab");
             cpuHolder.classList.add("fa-fly");
             cpuChoices.symbol = "fab fa-fly";
-
             if (playerOneChoices.color !== "color_box blue"){
                 cpuHolder.classList.add("blue_color"); 
                 cpuChoices.color = "blue_color";
@@ -436,12 +402,9 @@ function cpuCharChoose(){
                 cpuChoices.color = "yellow_color";    
         }
     } 
-
 }
-
 //Placeholder for the player's choices
 function playerCharacterHolder(){
-
     if (playerOneChoices.symbol == "fab fa-fly"){
         playerOneHolder.classList.add("fab");
         playerOneHolder.classList.add("fa-fly");
@@ -472,10 +435,8 @@ function playerCharacterHolder(){
         playerOneHolder.classList.add("yellow_color");
     }
 }
-
 //Saves the player's choices
 function playerChoose(){
-
     var classTriger = 0;
     //player chooses icon
     for (let icon of icons){
@@ -495,7 +456,6 @@ function playerChoose(){
         })
         
     }
-
     //player chooses color
     for (let colorBox of colorBoxes){
         colorBox.addEventListener("click", function(){
@@ -504,7 +464,6 @@ function playerChoose(){
         })
     }
 }
-
 //Erases all the players choices
 function classEraser(){
     playerOneHolder.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
@@ -513,7 +472,6 @@ function classEraser(){
         gridBox.firstElementChild.classList.remove("fas" , "fab" , "fa-fly", "fa-paw", "fa-cloud", "fa-envira", "blue_color", "red_color", "green_color", "yellow_color");
     }
 }
-
 //Starts the game
 function startGame(){
     startButton.addEventListener("click", function(){
@@ -532,21 +490,16 @@ function startGame(){
             }        
     })
 }
-
 function resultView(){
     scoreBoard.style.display = "none";
     gameGrid.style.display = "none";
 }
-
 //Resets the game
 function resetGame(){
     resetButton.addEventListener("click", function(){
         location.reload();
-        startGame();
     })
 }
-
-
 //Reloads the page
 function reloadPage(){
     location.reload();

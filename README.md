@@ -11,7 +11,8 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
   - Displayed on all of the pages, the heading bar has responsive design and includes game features for the sound and the music of the game. These features are available at the gamers customisation page and the actual game page.
   - The sound bar allows the player to adjust if they want to keep the music or the sound effects on while playing in game or turned off. The player has the ability to mute the sound and the music. 
 
-![Landing Page](https://github.com/Anelairam/picturegreece/blob/master/navbar.jpg)
+![Heading](https://github.com/Anelairam/tic_tac_toe/blob/main/header.png)
+![Sound Activity](https://github.com/Anelairam/tic_tac_toe/blob/main/no_active_audio.png)
 
 - __The landing page image__
 
@@ -20,7 +21,7 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
   - Information regarding the required options in order for the game to begin
   - The start button
 
-![Main Page](https://github.com/Anelairam/picturegreece/blob/master/header.jpg)
+![Main Page](https://github.com/Anelairam/tic_tac_toe/blob/main/main_choices.png)
 
 - __Main Game Page__
 
@@ -28,13 +29,15 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
   - It consists of the heading with the sound elements, the score are where the score is shown, the game grid, and the restart button.
   - The restart button refreshes the page and begins from the beginning 
 
-![Main Game Page](https://github.com/Anelairam/picturegreece/blob/master/aboutus.jpg)
+![Main Game Page](https://github.com/Anelairam/tic_tac_toe/blob/main/main_game.png)
 
 - __Win/ Loose/ Draw indications__
 
   - At the main game page after completing the game the final score is compaired and a win / loose / draw mesage appears on the main game page followed by sounds. 
 
-![Score/ Result Indication](https://github.com/Anelairam/picturegreece/blob/master/tours.jpg)
+![Win Indication](https://github.com/Anelairam/tic_tac_toe/blob/main/win.png)
+![Loose Indication](https://github.com/Anelairam/tic_tac_toe/blob/main/loose.png)
+![Draw Indication](https://github.com/Anelairam/tic_tac_toe/blob/main/draw.png)
 
 
 ## Testing 
@@ -43,16 +46,16 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
 - In this stage it was noticed that in the project in the beginning. However, after several trials the randomisation and customisation of the players compinations started to     mallfuction without any profound reason.
 - Some intresting bugs that are not yet addressed are that during the randomisation of the cpu choices at some combinations the choices can not be hold from the object compaired to others, also the are not. This affects the main score however, it does not interupt the game play.
 
-[Bug Picture](https://github.com/Anelairam/picturegreece/blob/master/index-validation.jpg)
+[Bug Picture](https://github.com/Anelairam/tic_tac_toe/blob/main/bug.jpg)
 
 
 ### Validator Testing 
 
 - HTML
   - No errors were returned when passing through the official for the entire code 
-  - [W3C validator](https://github.com/Anelairam/picturegreece/blob/master/tour-page-validator.jpg))
+  - [W3C validator](https://github.com/Anelairam/tic_tac_toe/blob/main/html_validator.jpg)
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://github.com/Anelairam/picturegreece/blob/master/css-validator.jpg)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://github.com/Anelairam/tic_tac_toe/blob/main/css_validator.jpg)
 
 ### Unfixed Bugs
 

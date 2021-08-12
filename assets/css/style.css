@@ -37,7 +37,7 @@ header{
     border-bottom: 2px solid black;
 }
 
-/*Style for header's items*/
+/*Style for header's sound items*/
 #sound{
     margin-top: 25px;
 }
@@ -75,7 +75,7 @@ header{
     justify-content: center;
     align-items: center;
 }
-
+/*Styles for the player's symbol choices*/
 .choices{
     width: 50%;
     height: 100px;
@@ -105,7 +105,7 @@ i span{
 
 
 
-/*Style for color choices*/
+/*Styles for the player's color choices*/
 #color_box1{
     background-color: #4284f5;
 }
@@ -200,6 +200,7 @@ h2 i{
     height: 1020px;
 }
 
+/*Styles for score board*/
 #score_area{
     width: 50%;
     height: 100px;
@@ -241,6 +242,7 @@ h2 i{
     flex-wrap: wrap;  
 }
 
+/*Styles for the boxes of the grid*/
 .player_box{
     width: 30%;
     height: 200px;
@@ -305,7 +307,7 @@ h2 i{
     display: none;
 }
 
-
+/*Styles for the win/loose status*/
 #win_status{
     display: none;
     width: 80%;

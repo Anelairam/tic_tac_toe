@@ -140,10 +140,12 @@ document.addEventListener("DOMContentLoaded", function(){
         if(mySound.muted == false){
             mySound.muted = true;
             yourSound.muted = true;
+            noSound.style.color = "red";
         }
         else{
             mySound.muted = false;
             yourSound.muted = false;
+            noSound.style.color = "black";
         }
 
         this.style.border = "none";

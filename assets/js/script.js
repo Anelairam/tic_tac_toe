@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 //Move check
                 if (count <5){
                     if (endGame == false){
-                        setTimeout(cpuMove, 1500);
+                        setTimeout(cpuMove, 750);
                         if (count >2 ){
                             setTimeout(gameResult, 1600);
                         }

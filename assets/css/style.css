@@ -142,16 +142,15 @@ i span{
     font-size: 35px;
 }
 
-.level_box{
-    line-height: 50px;
-    width: 100px;
-    height: 50px;
-    padding: auto;
-}
 
-.choices span:hover{
+.choices div:hover{
     cursor: pointer;
     display: inline;
+}
+
+#player_notification{
+    margin-top: 30px;
+    color: red;
 }
 
 
@@ -160,20 +159,12 @@ i span{
     background-color: black;
     height: 4px;
     margin-top: 85px;
-    /*display: none;*/
 }
 
 .icon_line{
     background-color: black;
     height: 4px;
     margin-top: 12px;
-    /*display: none;*/
-}
-
-.level_line{
-    background-color: black;
-    height: 4px;
-    /*display: none;*/ 
 }
 
 .picked{
@@ -183,7 +174,7 @@ i span{
 
 /*Style for start button*/
 #str_btn{
-    margin-top: 50px;
+    margin-top: 30px;
     width: 10%;
     padding-top: 5px;
     border: 4px solid black;
@@ -210,24 +201,36 @@ h2 i{
 }
 
 #score_area{
-    /*background-color: bisque;*/
     width: 50%;
     height: 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
     margin-bottom: 50px;
 }
 
-#score_board{
+#score_board{    
     display: flex;
     flex-direction: column;
-    
+    justify-content: center;
+    align-self: center;    
+}
+
+#score_holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#score_holder div{
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 #score_board i{
     margin-bottom: 5px;
-    font-size: 38px;
+    font-size: 50px;
 }
 
 
@@ -325,7 +328,6 @@ h2 i{
 }
 
 /*Responsive - media queries*/
-
 @media screen and (max-width: 1440px){
 
     .choices{
@@ -499,27 +501,31 @@ h2 i{
         margin-top: 65px;
     }
 
-    .level_box{
-        line-height: 25px;
-        width: 70px;
-        height: 50px;
-        margin: 5px 15px 15px 15px;
-    }
-
     #main_game_container{
         width: 90%;
-        margin: 20px auto 0 auto;
+        height: 600px;
+        margin: 0 auto;
     }
 
     #score_area{
+        display: flex;
+        flex-direction: column;
         width: 80%;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
+    }
+
+    #score_board h2{
+        font-size: 25px;
+    }
+
+    #score_board i{
+        font-size: 25px;
     }
 
     #game_grid{
         width: 90%;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 
     .player_box{
@@ -531,8 +537,59 @@ h2 i{
     }
 
 }
-/*
-@media screen and (max-width: 320px){
 
+@media screen and (max-width: 375px){
+    #main_game_container{
+        height: 600px;
+        margin: 0 auto;
+    }
+
+    #res_btns{
+        height: 0;
+        margin-top: 15px;
+    }
 }
-*/
+
+@media screen and (max-width: 320px){
+    body{
+        height: 100%;
+    }
+
+    #main_choices_container {
+        margin: 10px auto 0 auto;
+    }
+
+    .icon_box{
+        margin-right: 7.5px;
+        margin-left: 7.5px;
+    }
+
+    #main_game_container{
+        height: 550px;
+        margin: 0 auto;
+    }
+    #score_area{
+        height: 80px;
+    }
+
+    .player_box{
+        height: 90px;
+    }
+
+    #game_grid{
+        padding-bottom: 5px;
+    }
+
+    #res_btns{
+        height: 80px;
+        margin-top: 5px;
+    }
+
+    #rst_btn{
+        width: 80%;
+    }
+
+    #rst_btn h2{
+        font-size: 20px;
+    }
+}

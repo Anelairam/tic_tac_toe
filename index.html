@@ -58,6 +58,9 @@
                     <hr class="color_line">
                 </div>
             </div>
+            <div id="player_notification">
+                <h3>Need to choose : <span id="missing_choices">Symbol and color</span></h3>
+            </div>
         </div>
         <div id="str_btn">
             <h2>Start  <i class="fas fa-play"></i></h2>
@@ -69,14 +72,16 @@
         <div id=score_area>
             <div id="score_board">
                 <h2>Score</h2>
-                <span>
-                   <i id="player_one_holder"></i>
-                   : <span id="score_p1">0</span>
-                </span>
-                <span>
-                    <i id="cpu_holder"></i>
-                    : <span id="score_p2">0</span>
-                </span>
+                <div id="score_holder">
+                    <div>
+                        <i id="player_one_holder"></i>
+                        : <span id="score_p1">0</span>
+                    </div>
+                    <div>
+                        <i id="cpu_holder"></i>
+                        : <span id="score_p2">0</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="game_grid">

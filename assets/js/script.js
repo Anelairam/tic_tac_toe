@@ -3,9 +3,9 @@ var startButton = document.getElementById("str_btn");
 var resetButton = document.getElementById("rst_btn");
 var mainChoices = document.getElementById("main_choices_container");
 var mainGame = document.getElementById("main_game_container");
+var missingChoices = document.getElementById("missing_choices");
 var icons = document.getElementsByTagName("i");
 var colorBoxes = document.getElementsByClassName("color_box");
-var levels = document.getElementsByClassName("level_box");
 var playerOneHolder = document.getElementById("player_one_holder");
 var cpuHolder = document.getElementById("cpu_holder");
 var scorePlayOne = document.getElementById("score_p1");
@@ -26,6 +26,8 @@ var myAudio = new Audio();
     myAudio.loop = true;
 var musicBtn = document.getElementById("music_btn");
 var musicOn = false;
+var winAudion = new Audio();
+    winAudion.src = "../assets/audio/win.mp3"
 
 var mySound = new Audio();
     mySound.src = "../assets/audio/p1.mp3";
@@ -276,8 +278,7 @@ function cpuCharChoose(){
             } 
             else (playerOneChoices.color !== "color_box yellow")
                 cpuHolder.classList.add("yellow_color");
-                cpuChoices.color = "yellow_color";
-                 
+                cpuChoices.color = "yellow_color";                 
         }
     }
     else if (num == 2){
@@ -365,22 +366,31 @@ function playerCharacterHolder(){
 
 //Saves the player's choices
 function playerChoose(){
-
+    var classTriger = 0;
     //player chooses icon
     for (let icon of icons){
         icon.addEventListener("click", function(){
            myAudio.play();
            musicOn == true;
            playerOneChoices.symbol = this.className;
-           icon.classList.toggle("picked");
+           if(classTriger == 0){
+                icon.classList.toggle("picked");
+                console.log(icon);
+                classTriger = 1;
+           }
+           else{
+               icon.classList.toggle("picked");
+               classTriger = 0;
+           }
         })
+        
     }
 
     //player chooses color
     for (let colorBox of colorBoxes){
         colorBox.addEventListener("click", function(){
            playerOneChoices.color = this.className; 
-           colorBox.classList.toggle("picked");     
+           colorBox.classList.toggle("picked");
         })
     }
 }

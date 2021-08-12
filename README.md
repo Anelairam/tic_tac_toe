@@ -57,7 +57,7 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
 
 ### Unfixed Bugs
 
--Unfixed bugs are the the random customisations of the cpu player, these bugs does not allow the combinations of styles to work together and show the desired and accurate result.
+-Unfixed bugs are the the random customisations of the cpu player, these bugs does not allow the combinations of styles to work together and show the desired and accurate result and the abillity of the user to double click before the computer had made its choice.
  
 ### Future updates
 

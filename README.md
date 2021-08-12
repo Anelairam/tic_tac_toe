@@ -9,10 +9,9 @@ Tic Tac Toe is an online game with mutliple customisation options on the player'
 - __Heading__
 
   - Displayed on all of the pages, the heading bar has responsive design and includes game features for the sound and the music of the game. These features are available at the gamers customisation page and the actual game page.
+  - ![Heading](https://github.com/Anelairam/tic_tac_toe/blob/main/header.png)
   - The sound bar allows the player to adjust if they want to keep the music or the sound effects on while playing in game or turned off. The player has the ability to mute the sound and the music. 
-
-![Heading](https://github.com/Anelairam/tic_tac_toe/blob/main/header.png)
-![Sound Activity](https://github.com/Anelairam/tic_tac_toe/blob/main/no_active_audio.png)
+  - ![Sound Activity](https://github.com/Anelairam/tic_tac_toe/blob/main/no_active_audio.png)
 
 - __The landing page image__
 

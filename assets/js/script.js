@@ -69,8 +69,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
     var count = 0;
     //Add the player's icon into the grid boxes
-    if(stopTriger !== "p"){
-        for (let gridBox of gridBoxes){        
+   
+    for (let gridBox of gridBoxes){
+        while (stopTriger !== "p"){        
             gridBox.addEventListener("click", function(){
            
                 if (playerOneChoices.symbol == "fab fa-fly"){
@@ -93,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     gridBox.firstElementChild.classList.add("fa-envira");
                     stopTriger = "p";
                 }
-                
+                    
                 if (playerOneChoices.color == "color_box blue"){
                     gridBox.firstElementChild.classList.add("blue_color");
                 }
@@ -106,28 +107,30 @@ document.addEventListener("DOMContentLoaded", function(){
                 else{
                     gridBox.firstElementChild.classList.add("yellow_color");
                 }
+            })
+        }
             
             gridBox.firstElementChild.nextElementSibling.innerHTML = "x";
             mySound.play();
             count ++;
-                //Move check
-                if (count <5){
-                    if (endGame == false){
-                        setTimeout(cpuMove, 750);
-                        if (count >2 ){
-                            setTimeout(gameResult, 1600);
-                        }
-                    }                    
-                }
-                else{
-                    winStatus.firstElementChild.innerHTML = "Draw!";
-                    winStatus.style.color = "purple";
-                    winStatus.style.display = "block";
-                }       
+            //Move check
+            if (count <5){
+                if (endGame == false){
+                    setTimeout(cpuMove, 750);
+                    if (count >2 ){
+                        setTimeout(gameResult, 1600);
+                    }
+                }                    
+            }
+            else{
+                winStatus.firstElementChild.innerHTML = "Draw!";
+                winStatus.style.color = "purple";
+                winStatus.style.display = "block";
+            }       
                        
-            })
+            
         } 
-    }
+    
     //Reset the game
     resetGame();
 

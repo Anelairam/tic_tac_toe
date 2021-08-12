@@ -1,5 +1,6 @@
 
-//variable selection
+//variables selection
+var stopTriger = "n";
 
 //Button selection
 var startButton = document.getElementById("str_btn");
@@ -70,36 +71,40 @@ document.addEventListener("DOMContentLoaded", function(){
     //Add the player's icon into the grid boxes
     for (let gridBox of gridBoxes){
         gridBox.addEventListener("click", function(){
-            //Try to make it neet through function but got problem with the parameter
-            //playerChoiceCharacter(gridBox);
-            if (playerOneChoices.symbol == "fab fa-fly"){
-                gridBox.firstElementChild.classList.add("fab");
-                gridBox.firstElementChild.classList.add("fa-fly");
-            }
-            else if (playerOneChoices.symbol == "fas fa-paw"){
-                gridBox.firstElementChild.classList.add("fas");
-                gridBox.firstElementChild.classList.add("fa-paw");
-            }
-            else if (playerOneChoices.symbol == "fas fa-cloud"){
-                gridBox.firstElementChild.classList.add("fas");
-                gridBox.firstElementChild.classList.add("fa-cloud");
-            }
-            else{
-                gridBox.firstElementChild.classList.add("fab");
-                gridBox.firstElementChild.classList.add("fa-envira");
-            }
-            
-            if (playerOneChoices.color == "color_box blue"){
-                gridBox.firstElementChild.classList.add("blue_color");
-            }
-            else if (playerOneChoices.color == "color_box red"){
-                gridBox.firstElementChild.classList.add("red_color");
-            }
-            else if (playerOneChoices.color == "color_box green"){
-                gridBox.firstElementChild.classList.add("green_color");
-            }
-            else{
-                gridBox.firstElementChild.classList.add("yellow_color");
+            if(stopTriger !== "p"){
+                if (playerOneChoices.symbol == "fab fa-fly"){
+                    gridBox.firstElementChild.classList.add("fab");
+                    gridBox.firstElementChild.classList.add("fa-fly");
+                    stopTriger = "p";
+                }
+                else if (playerOneChoices.symbol == "fas fa-paw"){
+                    gridBox.firstElementChild.classList.add("fas");
+                    gridBox.firstElementChild.classList.add("fa-paw");
+                    stopTriger = "p";
+                }
+                else if (playerOneChoices.symbol == "fas fa-cloud"){
+                    gridBox.firstElementChild.classList.add("fas");
+                    gridBox.firstElementChild.classList.add("fa-cloud");
+                    stopTriger = "p";
+                }
+                else{
+                    gridBox.firstElementChild.classList.add("fab");
+                    gridBox.firstElementChild.classList.add("fa-envira");
+                    stopTriger = "p";
+                }
+                
+                if (playerOneChoices.color == "color_box blue"){
+                    gridBox.firstElementChild.classList.add("blue_color");
+                }
+                else if (playerOneChoices.color == "color_box red"){
+                    gridBox.firstElementChild.classList.add("red_color");
+                }
+                else if (playerOneChoices.color == "color_box green"){
+                    gridBox.firstElementChild.classList.add("green_color");
+                }
+                else{
+                    gridBox.firstElementChild.classList.add("yellow_color");
+                }
             }
             gridBox.firstElementChild.nextElementSibling.innerHTML = "x";
             mySound.play();
@@ -288,11 +293,12 @@ function gameResult(){
 //Moves the cpu player
 function cpuMove(){
     let move = Math.floor(Math.random() *9);
-
+    stopTriger = "c";
     if (gridBoxes[move].firstElementChild.className == "grid_icon"){
         if (cpuChoices.symbol == "fab fa-fly"){
             gridBoxes[move].firstElementChild.classList.add("fab");
             gridBoxes[move].firstElementChild.classList.add("fa-fly");
+            
         }
         else if (cpuChoices.symbol == "fas fa-paw"){
             gridBoxes[move].firstElementChild.classList.add("fas");
@@ -463,6 +469,7 @@ function playerCharacterHolder(){
 
 //Saves the player's choices
 function playerChoose(){
+
     var classTriger = 0;
     //player chooses icon
     for (let icon of icons){
@@ -529,6 +536,7 @@ function resultView(){
 function resetGame(){
     resetButton.addEventListener("click", function(){
         location.reload();
+        startGame();
     })
 }
 
